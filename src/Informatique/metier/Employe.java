@@ -6,6 +6,7 @@ import java.util.Objects;
 
 /**
  * classe Employe de gestion de projet
+ *
  * @author Ozan Genc
  * @version 1.0
  */
@@ -58,13 +59,19 @@ public class Employe {
     protected List<Competence> ListeCompt = new ArrayList<>();
 
     /**
+     * liste du niveau pour chaque discipline
+     */
+    protected List<ListeDisciplinesEtNiveau> ListDiscNiveau = new ArrayList<>();
+
+
+    /**
      * Constructeur paramétré de la classe Employe
      *
      * @param matricule matricule de l'employe
-     * @param nom nom de l'employe
-     * @param prenom prénom de l'employe
-     * @param tel téléphone de l'employe
-     * @param mail mail de l'employe
+     * @param nom       nom de l'employe
+     * @param prenom    prénom de l'employe
+     * @param tel       téléphone de l'employe
+     * @param mail      mail de l'employe
      */
     public Employe(String matricule, String nom, String prenom, String tel, String mail) {
         this.id_employe = id++;
@@ -77,15 +84,8 @@ public class Employe {
     }
 
     /**
-     * retourne la liste de discipline et niveau pour une compétence
-     * @return liste DisciplineEtNiveau
-     */
-    public List<Competence> listeDisciplinesEtNiveau() {
-        return ListeCompt;
-    }
-
-    /**
      * setter de la liste compétence
+     *
      * @param listeCompt listeCompt
      */
     public void setListeCompt(List<Competence> listeCompt) {
@@ -94,6 +94,7 @@ public class Employe {
 
     /**
      * getter du numéro de l'employe
+     *
      * @return numéro de l'employe
      */
     public int getId_employe() {
@@ -102,6 +103,7 @@ public class Employe {
 
     /**
      * setter du numéro de l'employe
+     *
      * @param id_employe numéro de l'employe
      */
     public void setId_employe(int id_employe) {
@@ -110,6 +112,7 @@ public class Employe {
 
     /**
      * getter du matricule de l'employe
+     *
      * @return matricule de l'employe
      */
     public String getMatricule() {
@@ -118,6 +121,7 @@ public class Employe {
 
     /**
      * setter du matricule de l'employe
+     *
      * @param matricule matricule de l'employe
      */
     public void setMatricule(String matricule) {
@@ -126,6 +130,7 @@ public class Employe {
 
     /**
      * getter du nom de l'employe
+     *
      * @return nom de l'employe
      */
     public String getNom() {
@@ -134,6 +139,7 @@ public class Employe {
 
     /**
      * setter du nom de l'employe
+     *
      * @param nom nom de l'employe
      */
     public void setNom(String nom) {
@@ -142,6 +148,7 @@ public class Employe {
 
     /**
      * getter du prénom de l'employe
+     *
      * @return prénom de l'employe
      */
     public String getPrenom() {
@@ -150,6 +157,7 @@ public class Employe {
 
     /**
      * setter du prénom de l'employe
+     *
      * @param prenom prénom de l'employe
      */
     public void setPrenom(String prenom) {
@@ -158,6 +166,7 @@ public class Employe {
 
     /**
      * getter du téléphone de l'employe
+     *
      * @return téléphone de l'employe
      */
     public String getTel() {
@@ -166,6 +175,7 @@ public class Employe {
 
     /**
      * setter du téléphone de l'employe
+     *
      * @param tel téléphone de l'employe
      */
     public void setTel(String tel) {
@@ -174,6 +184,7 @@ public class Employe {
 
     /**
      * getter du mail de l'employe
+     *
      * @return mail de l'employe
      */
     public String getMail() {
@@ -182,6 +193,7 @@ public class Employe {
 
     /**
      * setter du mail de l'employe
+     *
      * @param mail mail de l'employe
      */
     public void setMail(String mail) {
@@ -190,6 +202,7 @@ public class Employe {
 
     /**
      * getter de la liste des projets
+     *
      * @return projet liste des projets
      */
     public List<Projet> getProjets() {
@@ -198,10 +211,27 @@ public class Employe {
 
     /**
      * setter de la liste des projets
+     *
      * @param projets liste des projets
      */
     public void setProjets(List<Projet> projets) {
         this.projets = projets;
+    }
+
+
+    /**
+     * Retourne une liste des disciplines associées à leur niveau de compétence.
+     * Cette méthode parcourt la liste des compétences de l'employé et crée une liste de paires Discipline-Niveau.
+     * Note: Avant de retourner la liste, elle efface d'abord la liste actuelle pour éviter les duplications.
+     *
+     * @return Une liste de paires Discipline-Niveau représentant les disciplines et leur niveau de compétence.
+     */
+    public List<ListeDisciplinesEtNiveau> listeDisciplinesEtNiveau() {
+        ListDiscNiveau.clear();
+        for (Competence competence : ListeCompt) {
+            ListDiscNiveau.add(new ListeDisciplinesEtNiveau(competence.getDisciplines(), competence.getNiveau()));
+        }
+        return ListDiscNiveau;
     }
 
     /**
@@ -210,9 +240,9 @@ public class Employe {
      * @param discipline
      * @param niveau
      */
-    public void addDiscipline(Disciplines discipline, int niveau){
-       Competence competence = new Competence(discipline, niveau);
-       ListeCompt.add(competence);
+    public void addDiscipline(Disciplines discipline, int niveau) {
+        Competence competence = new Competence(discipline, niveau);
+        ListeCompt.add(competence);
     }
 
     /**
@@ -220,30 +250,37 @@ public class Employe {
      *
      * @param discipline
      * @param niveau
-
      */
-    public boolean modifDiscipline(Disciplines discipline,int niveau){
-        for (Competence c : ListeCompt){
-            if (ListeCompt.get(ListeCompt.indexOf(c)).disciplines.equals(discipline)){
-                ListeCompt.get(ListeCompt.indexOf(c)).niveau = niveau;
+
+    public boolean modifDiscipline(Disciplines discipline, int niveau) {
+        for (Competence c : ListeCompt) {
+            if (c.getDisciplines().equals(discipline)) {
+                c.setNiveau(niveau);
+                return true;
             }
         }
-        return false;
+        return false; // La discipline n'a pas été trouvée et modifiée
     }
-
 
     /**
      * Suppression d'une discipline
      *
      * @param discipline
      */
-    public void suppDiscipline(Disciplines discipline){
-        ListeCompt.remove(discipline);
-    }
 
+    public boolean supprimerDiscipline(Disciplines discipline) {
+        for (Competence c : ListeCompt) {
+            if (c.getDisciplines().equals(discipline)) {
+                return ListeCompt.remove(c);
+
+            }
+        }
+        return false; // La discipline n'a pas été trouvée et supprimée
+    }
 
     /**
      * convertion de l'objet Employe en une chaîne de caractères représentative
+     *
      * @return les informations de l'employe
      */
     @Override
@@ -259,7 +296,6 @@ public class Employe {
                 ", ListeCompt=" + ListeCompt +
                 '}';
     }
-
 
 
     @Override

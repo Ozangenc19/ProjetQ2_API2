@@ -1,7 +1,6 @@
 package Informatique.metier;
 
 
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,6 +9,7 @@ import java.util.Objects;
 
 /**
  * classe Projet de gestion de projet
+ *
  * @author Ozan Genc
  * @version 1.0
  */
@@ -44,20 +44,28 @@ public class Projet {
      */
     protected Employe responsable;
 
+
     /**
      * liste des disciplines
      */
     protected List<Investissement> Listeinvest = new ArrayList<>();
 
-
+    /**
+     * liste du niveau des compétences pour chaque responsable selon ca discipline
+     */
+    protected List<NiveauResponsableDisciplines> ListeNivResDiscipline = new ArrayList<>();
+    /**
+     * liste de la quantite d'investissement pour chaque discipline
+     */
+    protected List<ListeDisciplinesEtInvestissement> ListeDiscInvest = new ArrayList<>();
 
     /**
      * Constructeur paramétré de la classe Projet
      *
-     * @param nom nom du projet
+     * @param nom       nom du projet
      * @param dateDebut date de début du projet
-     * @param dateFin date de fin du projet
-     * @param cout cout total du projet
+     * @param dateFin   date de fin du projet
+     * @param cout      cout total du projet
      */
     public Projet(String nom, Date dateDebut, Date dateFin, BigDecimal cout, Employe responsable) {
         this.id_projet = idProjet++;
@@ -70,10 +78,11 @@ public class Projet {
 
     /**
      * Constructeur paramétré de la classe Projet pour vérification
-     * @param nom nom du projet
+     *
+     * @param nom         nom du projet
      * @param responsable responsable du projet
      */
-    public Projet(String nom, Employe responsable){
+    public Projet(String nom, Employe responsable) {
         this.nom = nom;
         this.responsable = responsable;
     }
@@ -81,6 +90,7 @@ public class Projet {
 
     /**
      * getter numéro du projet
+     *
      * @return numéro du projet
      */
     public int getId_projet() {
@@ -89,6 +99,7 @@ public class Projet {
 
     /**
      * setter numéro du projet
+     *
      * @param id_projet numéro du projet
      */
 
@@ -98,6 +109,7 @@ public class Projet {
 
     /**
      * getter nom du projet
+     *
      * @return nom du projet
      */
     public String getNom() {
@@ -106,6 +118,7 @@ public class Projet {
 
     /**
      * setter nom du projet
+     *
      * @param nom nom du projet
      */
 
@@ -115,6 +128,7 @@ public class Projet {
 
     /**
      * getter date début du projet
+     *
      * @return la date début du projet
      */
 
@@ -124,6 +138,7 @@ public class Projet {
 
     /**
      * setter date début du projet
+     *
      * @param dateDebut la date de début du projet
      */
 
@@ -133,6 +148,7 @@ public class Projet {
 
     /**
      * getter date fin du projet
+     *
      * @return date fin du projet
      */
 
@@ -142,6 +158,7 @@ public class Projet {
 
     /**
      * setter date fin du projet
+     *
      * @param dateFin la date de fin du projet
      */
 
@@ -151,6 +168,7 @@ public class Projet {
 
     /**
      * getter cout total du projet
+     *
      * @return cout total du projet
      */
 
@@ -160,6 +178,7 @@ public class Projet {
 
     /**
      * setter cout total du projet
+     *
      * @param cout le cout total du projet
      */
     public void setCout(BigDecimal cout) {
@@ -168,6 +187,7 @@ public class Projet {
 
     /**
      * getter responsable du projet
+     *
      * @return reponsable du projet
      */
 
@@ -177,6 +197,7 @@ public class Projet {
 
     /**
      * setter responsable du projet
+     *
      * @param responsable le responsable du projet
      */
 
@@ -185,15 +206,8 @@ public class Projet {
     }
 
     /**
-     * retourne la liste des disciplines et le niveau du responsable du projet
-     * @return liste des disciplines et niveau du responsable de projet
-     */
-    public List<Investissement> listeDisciplineEtInvestissement(){
-        return Listeinvest;
-    }
-
-    /**
      * getter de la liste des investissements
+     *
      * @return liste des investissements
      */
     public List<Investissement> getListeinvest() {
@@ -202,6 +216,7 @@ public class Projet {
 
     /**
      * setter de la liste des investissements
+     *
      * @param listeinvest liste des investissements
      */
     public void setListeinvest(List<Investissement> listeinvest) {
@@ -209,26 +224,58 @@ public class Projet {
     }
 
     /**
+     * retourne la liste des disciplines et le niveau du responsable du projet
+     *
+     * @return liste des disciplines et le niveau du responsable du projet
+     */
+    public List<NiveauResponsableDisciplines> niveauResponsableDisciplines() {
+        ListeNivResDiscipline.clear();
+        for (Competence c : getResponsable().ListeCompt) {
+            ListeNivResDiscipline.add(new NiveauResponsableDisciplines(c.getDisciplines(), c.getNiveau()));
+
+        }
+        return ListeNivResDiscipline;
+    }
+
+    /**
+     * Retourne une liste des disciplines associées à leur investissement en quantité
+     * Cette méthode parcourt la liste des investissements et crée une liste de paires Discipline-QuantitéJH.
+     * Note: Avant de retourner la liste, elle efface d'abord la liste actuelle pour éviter les duplications.
+     *
+     * @return Une liste de paires Discipline-QuantitéJH représentant les disciplines et leurs investissements.
+     */
+    protected List<ListeDisciplinesEtInvestissement> listeDisciplinesEtInvestissement() {
+        ListeDiscInvest.clear();
+        for (Investissement investissement : Listeinvest) {
+            ListeDiscInvest.add(new ListeDisciplinesEtInvestissement(investissement.getDiscipline(), investissement.getQuantiteJH()));
+        }
+        return ListeDiscInvest;
+    }
+
+    /**
      * retourne le total des investissements
+     *
      * @return total des investissements
      */
-    public int investissementTotal(){
+    public int investissementTotal() {
         int total = 0;
-        for (Investissement invest : Listeinvest){
+        for (Investissement invest : Listeinvest) {
             total += invest.quantiteJH;
         }
 
         return total;
     }
+
     /**
      * ajout d'une discpline au projet
+     *
      * @param discipline discpline à ajouter
      * @return ajout effectué ou pas
      */
 
-    public boolean addDiscipline(Disciplines discipline, int quantite){
-        for (Investissement i : Listeinvest ){
-            if (i.getDiscipline().equals(discipline));
+    public boolean addDiscipline(Disciplines discipline, int quantite) {
+        for (Investissement i : Listeinvest) {
+            if (i.getDiscipline().equals(discipline)) ;
             return false;
         }
         Investissement investissement = new Investissement(discipline, quantite);
@@ -238,43 +285,46 @@ public class Projet {
 
     /**
      * modification d'une discipline
+     *
      * @param discipline Discipline
      */
-    public void modifDiscipline(Disciplines discipline,int quantite){
-        for (Investissement invest : Listeinvest){
-            if (Listeinvest.get(Listeinvest.indexOf(invest)).discipline.equals(discipline)){
-                Listeinvest.get(Listeinvest.indexOf(invest)).quantiteJH = quantite;
-            }
+
+    public boolean modifDiscipline(Disciplines discipline, int quantite) {
+        for (Investissement investissement : Listeinvest) {
+            if (investissement.getDiscipline().equals(discipline)) {
+                investissement.setQuantiteJH(quantite);
+                return true;
             }
         }
-
+        return false; // La discipline n'a pas été trouvée et modifiée
+    }
 
     /**
      * suppression d'une discipline
-     * @param discipline
+     *
+     * @param discipline Discipline
      */
-    public void suppDiscipline(Disciplines discipline){
-        Listeinvest.remove(discipline);
+
+    public boolean suppDiscipline(Disciplines discipline) {
+        for (Investissement investissement : Listeinvest) {
+            if (investissement.getDiscipline().equals(discipline)) {
+                return Listeinvest.remove(investissement);
+
+            }
+        }
+        return false; // La discipline n'a pas été trouvée et supprimée
     }
 
 
     /**
      * convertion de l'objet Projet en une chaîne de caractères représentative
+     *
      * @return les informations du Projet
      */
     @Override
     public String toString() {
-        return "Projet{" +
-                "nom='" + nom + '\'' +
-                ", dateDebut=" + dateDebut +
-                ", dateFin=" + dateFin +
-                ", cout=" + cout +
-                ", responsable=" + responsable +
-                ", Listeinvest=" + Listeinvest +
-                '}';
+        return "Projet{" + "nom='" + nom + '\'' + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", cout=" + cout + ", responsable=" + responsable + ", Listeinvest=" + Listeinvest + '}';
     }
-
-
 
 
     @Override

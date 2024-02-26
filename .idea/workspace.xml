@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="troisieme commit">
-      <change afterPath="$PROJECT_DIR$/src/Informatique/Gestion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Informatique/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Informatique/metier/Projet.java" afterDir="false" />
+    <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="fin des méthodes, des commentaires ( à rajouter si création de nouvelle méthode)">
+      <change afterPath="$PROJECT_DIR$/src/Informatique/metier/ListeDisciplinesEtInvestissement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Informatique/metier/ListeDisciplinesEtNiveau.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Informatique/metier/NiveauResponsableDisciplines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/Competence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Competence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/DisciplineEtInvestissement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/Disciplines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Disciplines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Employe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/Investissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Investissement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/Projet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/Gestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/Gestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Employe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Projet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,20 +42,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/API",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/API&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -76,7 +72,12 @@
       <workItem from="1708540396064" duration="3557000" />
       <workItem from="1708544147187" duration="1285000" />
       <workItem from="1708605362398" duration="10009000" />
-      <workItem from="1708625375280" duration="8106000" />
+      <workItem from="1708625375280" duration="8856000" />
+      <workItem from="1708683357030" duration="474000" />
+      <workItem from="1708860493089" duration="462000" />
+      <workItem from="1708939547961" duration="328000" />
+      <workItem from="1708961240584" duration="3580000" />
+      <workItem from="1708965995065" duration="6426000" />
     </task>
     <task id="LOCAL-00001" summary="premier commit">
       <option name="closed" value="true" />
@@ -102,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708074384863</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fin des méthodes, des commentaires ( à rajouter si création de nouvelle méthode)">
+      <option name="closed" value="true" />
+      <created>1708633675223</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708633675223</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +132,7 @@
     <MESSAGE value="premier commit" />
     <MESSAGE value="deuxieme commit" />
     <MESSAGE value="troisieme commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="troisieme commit" />
+    <MESSAGE value="fin des méthodes, des commentaires ( à rajouter si création de nouvelle méthode)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fin des méthodes, des commentaires ( à rajouter si création de nouvelle méthode)" />
   </component>
 </project>
