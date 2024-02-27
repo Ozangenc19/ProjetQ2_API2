@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="fin des méthodes, des commentaires ( à rajouter si création de nouvelle méthode)">
-      <change afterPath="$PROJECT_DIR$/src/Informatique/metier/ListeDisciplinesEtInvestissement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Informatique/metier/ListeDisciplinesEtNiveau.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Informatique/metier/NiveauResponsableDisciplines.java" afterDir="false" />
+    <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="ajout et correction de toutes les méthodes ainsi que les listes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/Gestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/Gestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Employe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Projet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/ListeDisciplinesEtInvestissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/ListeDisciplinesEtInvestissement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/ListeDisciplinesEtNiveau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/ListeDisciplinesEtNiveau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/NiveauResponsableDisciplines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/NiveauResponsableDisciplines.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +74,10 @@
       <workItem from="1708860493089" duration="462000" />
       <workItem from="1708939547961" duration="328000" />
       <workItem from="1708961240584" duration="3580000" />
-      <workItem from="1708965995065" duration="6426000" />
+      <workItem from="1708965995065" duration="6571000" />
+      <workItem from="1709018784147" duration="123000" />
+      <workItem from="1709019224326" duration="29000" />
+      <workItem from="1709028073446" duration="2741000" />
     </task>
     <task id="LOCAL-00001" summary="premier commit">
       <option name="closed" value="true" />
@@ -111,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708633675223</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ajout et correction de toutes les méthodes ainsi que les listes">
+      <option name="closed" value="true" />
+      <created>1708973751426</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708973751426</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +141,7 @@
     <MESSAGE value="deuxieme commit" />
     <MESSAGE value="troisieme commit" />
     <MESSAGE value="fin des méthodes, des commentaires ( à rajouter si création de nouvelle méthode)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fin des méthodes, des commentaires ( à rajouter si création de nouvelle méthode)" />
+    <MESSAGE value="ajout et correction de toutes les méthodes ainsi que les listes" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout et correction de toutes les méthodes ainsi que les listes" />
   </component>
 </project>
