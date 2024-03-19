@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="ajout et correction de toutes les méthodes ainsi que les listes">
+      <change afterPath="$PROJECT_DIR$/src/myconnections/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/myconnections/ODBCConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/ListeDisciplinesEtInvestissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/ListeDisciplinesEtInvestissement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/ListeDisciplinesEtNiveau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/ListeDisciplinesEtNiveau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/NiveauResponsableDisciplines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/NiveauResponsableDisciplines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetQ2_API2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetQ2_API2.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +47,14 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/API&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/libjava/ojdbc8.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -77,7 +82,20 @@
       <workItem from="1708965995065" duration="6571000" />
       <workItem from="1709018784147" duration="123000" />
       <workItem from="1709019224326" duration="29000" />
-      <workItem from="1709028073446" duration="2741000" />
+      <workItem from="1709028073446" duration="3222000" />
+      <workItem from="1709038047372" duration="630000" />
+      <workItem from="1709129443162" duration="101000" />
+      <workItem from="1709467403678" duration="18000" />
+      <workItem from="1709467604630" duration="102000" />
+      <workItem from="1709469049828" duration="78000" />
+      <workItem from="1709471311780" duration="30000" />
+      <workItem from="1709474997076" duration="19000" />
+      <workItem from="1709579748553" duration="131000" />
+      <workItem from="1709579921238" duration="89000" />
+      <workItem from="1710323723858" duration="66000" />
+      <workItem from="1710327117957" duration="162000" />
+      <workItem from="1710492282460" duration="661000" />
+      <workItem from="1710837425805" duration="297000" />
     </task>
     <task id="LOCAL-00001" summary="premier commit">
       <option name="closed" value="true" />
@@ -119,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708973751426</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ajout et correction de toutes les méthodes ainsi que les listes">
+      <option name="closed" value="true" />
+      <created>1709030958780</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709030958781</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
