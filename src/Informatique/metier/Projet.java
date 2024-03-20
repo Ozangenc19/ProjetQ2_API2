@@ -66,6 +66,7 @@ public class Projet {
      * @param dateDebut date de début du projet
      * @param dateFin   date de fin du projet
      * @param cout      cout total du projet
+     * @param responsable objet de la table Employe
      */
     public Projet(String nom, Date dateDebut, Date dateFin, BigDecimal cout, Employe responsable) {
         this.id_projet = idProjet++;
@@ -75,6 +76,28 @@ public class Projet {
         this.cout = cout;
         this.responsable = responsable;
     }
+    /**
+     * Constructeur paramétré de la classe Projet
+     *
+     * @param nom       nom du projet
+     * @param dateDebut date de début du projet
+     * @param dateFin   date de fin du projet
+     * @param cout      cout total du projet
+     */
+    public Projet(String nom, Date dateDebut, Date dateFin, BigDecimal cout) {
+        this.nom = nom;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.cout = cout;
+    }
+    public Projet(int idProjet, String nom, Date dateDebut, Date dateFin, BigDecimal cout) {
+        this.id_projet = idProjet++;
+        this.nom = nom;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.cout = cout;
+    }
+
 
     /**
      * Constructeur paramétré de la classe Projet pour vérification

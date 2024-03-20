@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="ajout et correction de toutes les méthodes ainsi que les listes">
-      <change afterPath="$PROJECT_DIR$/src/myconnections/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/myconnections/ODBCConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="mise a jour du code ( ajout connexion base de données)">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetQ2_API2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetQ2_API2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/Gestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/Gestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Projet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +94,13 @@
       <workItem from="1710327117957" duration="162000" />
       <workItem from="1710492282460" duration="661000" />
       <workItem from="1710837425805" duration="297000" />
+      <workItem from="1710855201900" duration="300000" />
+      <workItem from="1710923437138" duration="72000" />
+      <workItem from="1710924873917" duration="47000" />
+      <workItem from="1710937943437" duration="2161000" />
+      <workItem from="1710942917673" duration="1838000" />
+      <workItem from="1710955041717" duration="624000" />
+      <workItem from="1710960695511" duration="3348000" />
     </task>
     <task id="LOCAL-00001" summary="premier commit">
       <option name="closed" value="true" />
@@ -145,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709030958781</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="mise a jour du code ( ajout connexion base de données)">
+      <option name="closed" value="true" />
+      <created>1710855417431</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710855417431</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +181,7 @@
     <MESSAGE value="troisieme commit" />
     <MESSAGE value="fin des méthodes, des commentaires ( à rajouter si création de nouvelle méthode)" />
     <MESSAGE value="ajout et correction de toutes les méthodes ainsi que les listes" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout et correction de toutes les méthodes ainsi que les listes" />
+    <MESSAGE value="mise a jour du code ( ajout connexion base de données)" />
+    <option name="LAST_COMMIT_MESSAGE" value="mise a jour du code ( ajout connexion base de données)" />
   </component>
 </project>
