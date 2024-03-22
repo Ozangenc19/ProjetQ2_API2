@@ -67,6 +67,26 @@ public class Employe {
     /**
      * Constructeur paramétré de la classe Employe
      *
+     * @param id_employe id de l'employe
+     * @param matricule matricule de l'employe
+     * @param nom       nom de l'employe
+     * @param prenom    prénom de l'employe
+     * @param tel       téléphone de l'employe
+     * @param mail      mail de l'employe
+     */
+    public Employe(int id_employe, String matricule, String nom, String prenom, String tel, String mail) {
+        this.id_employe = id++;
+        this.matricule = matricule;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.tel = tel;
+        this.mail = mail;
+
+    }
+
+    /**
+     * Constructeur paramétré de la classe Employe
+     *
      * @param matricule matricule de l'employe
      * @param nom       nom de l'employe
      * @param prenom    prénom de l'employe
@@ -80,7 +100,6 @@ public class Employe {
         this.prenom = prenom;
         this.tel = tel;
         this.mail = mail;
-
     }
 
     /**
