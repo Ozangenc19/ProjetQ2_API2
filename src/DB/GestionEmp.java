@@ -1,4 +1,4 @@
-package Informatique;
+package DB;
 
 
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
 /**
  * @author Ozan Genc
  */
-public class Gestion {
+public class GestionEmp {
     private Scanner sc = new Scanner(System.in);
     private Connection dbConnect;
 
@@ -94,7 +94,7 @@ public class Gestion {
     }
 
     public void recherche() {
-        System.out.println("id du projet recherché ");
+        System.out.println("id de l'employé recherché ");
         int idrech = sc.nextInt();
         String query = "select * from API2_EMPLOYE where id_employe = ?";
         try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
@@ -119,12 +119,12 @@ public class Gestion {
     }
 
     public void modification() {
-        System.out.println("id du projet recherché ");
+        System.out.println("id de l'employé recherché ");
         int idrech = sc.nextInt();
         sc.skip("\n");
-        System.out.println("nouveau matricule ");
+        System.out.println("nouveau téléphone ");
         String nvmat = sc.nextLine();
-        String query = "update API2_EMPLOYE set matricule = ? where id_employe = ?";
+        String query = "update API2_EMPLOYE set tel = ? where id_employe = ?";
         try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
             pstm.setString(1,nvmat);
             pstm.setInt(2,idrech);
@@ -138,7 +138,7 @@ public class Gestion {
     }
 
     public void suppression() {
-        System.out.println("id du projet recherché ");
+        System.out.println("id de l'employé recherché ");
         int idrech = sc.nextInt();
         String query = "delete from API2_EMPLOYE where id_employe = ?";
         try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
@@ -176,7 +176,7 @@ public class Gestion {
 
 
     public static void main(String []args){
-        Gestion g = new Gestion();
+        GestionEmp g = new GestionEmp();
         g.gestion();
     }
 }
