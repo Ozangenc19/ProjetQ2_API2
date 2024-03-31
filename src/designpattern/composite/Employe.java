@@ -1,4 +1,9 @@
-package Informatique.metier;
+package designpattern.composite;
+
+import Informatique.metier.Competence;
+import Informatique.metier.Disciplines;
+import Informatique.metier.ListeDisciplinesEtNiveau;
+import Informatique.metier.Projet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,14 +72,14 @@ public class Employe {
     /**
      * Constructeur paramétré de la classe Employe
      *
-     * @param id id de l'employe
+     * @param id_employe id de l'employe
      * @param matricule matricule de l'employe
      * @param nom       nom de l'employe
      * @param prenom    prénom de l'employe
      * @param tel       téléphone de l'employe
      * @param mail      mail de l'employe
      */
-    public Employe(int id, String matricule, String nom, String prenom, String tel, String mail) {
+    public Employe(int id_employe, String matricule, String nom, String prenom, String tel, String mail) {
         this.id_employe = id++;
         this.matricule = matricule;
         this.nom = nom;
@@ -311,6 +316,8 @@ public class Employe {
                 ", prenom='" + prenom + '\'' +
                 ", tel='" + tel + '\'' +
                 ", mail='" + mail + '\'' +
+                ", projets=" + projets +
+                ", ListeCompt=" + ListeCompt +
                 '}';
     }
 

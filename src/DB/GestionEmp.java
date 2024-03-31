@@ -101,11 +101,11 @@ public class GestionEmp {
             pstm.setInt(1,idrech);
             ResultSet rs = pstm.executeQuery();
             if(rs.next()){
-                String matricule = rs.getString(1);
-                String nom = rs.getString(2);
-                String prenom = rs.getString(3);
-                String tel = rs.getString(4);
-                String mail = rs.getString(5);
+                String matricule = rs.getString(2);
+                String nom = rs.getString(3);
+                String prenom = rs.getString(4);
+                String tel = rs.getString(5);
+                String mail = rs.getString(6);
 
 
                 Employe emp = new Employe(idrech,matricule,nom,prenom,tel,mail);
@@ -123,10 +123,10 @@ public class GestionEmp {
         int idrech = sc.nextInt();
         sc.skip("\n");
         System.out.println("nouveau téléphone ");
-        String nvmat = sc.nextLine();
+        String nvtel = sc.nextLine();
         String query = "update API2_EMPLOYE set tel = ? where id_employe = ?";
         try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
-            pstm.setString(1,nvmat);
+            pstm.setString(1,nvtel);
             pstm.setInt(2,idrech);
             int n = pstm.executeUpdate();
             if(n!=0) System.out.println(n+ "ligne mise à jour");
@@ -157,14 +157,14 @@ public class GestionEmp {
         try(Statement stm = dbConnect.createStatement()) {
             ResultSet rs = stm.executeQuery(query);
             while(rs.next()){
-                int id_employe = rs.getInt(1);
+                int idrech = rs.getInt(1);
                 String matricule = rs.getString(2);
                 String nom = rs.getString(3);
                 String prenom = rs.getString(4);
                 String tel = rs.getString(5);
                 String mail = rs.getString(6);
 
-                Employe emp = new Employe(id_employe,matricule,nom,prenom,tel,mail);
+                Employe emp = new Employe(idrech,matricule,nom,prenom,tel,mail);
                 System.out.println(emp);
             }
 

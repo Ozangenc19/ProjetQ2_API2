@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="Fin de la classe Gestion">
+    <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="Fin de la classe GestionEmp">
+      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/Employe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/Employe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/Employe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/Gestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/GestionEmp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DB/GestionEmp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/GestionEmp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Employe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +47,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/libjava/ojdbc8.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/genc0/OneDrive - HEPH-Condorcet/Bureau/BAC 2 Q2/API 2/ProjetQ2_API2/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -54,6 +58,16 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\genc0\OneDrive - HEPH-Condorcet\Bureau\BAC 2 Q2\API 2\ProjetQ2_API2\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="designpattern.observer" />
+      <recent name="designpattern.composite" />
+      <recent name="designpattern.builder" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -103,7 +117,17 @@
       <workItem from="1711101709628" duration="4420000" />
       <workItem from="1711112387436" duration="690000" />
       <workItem from="1711113106710" duration="199000" />
-      <workItem from="1711119427015" duration="262000" />
+      <workItem from="1711119427015" duration="628000" />
+      <workItem from="1711480102782" duration="608000" />
+      <workItem from="1711528260623" duration="121000" />
+      <workItem from="1711536147385" duration="522000" />
+      <workItem from="1711621395424" duration="787000" />
+      <workItem from="1711627218314" duration="4009000" />
+      <workItem from="1711632622786" duration="1187000" />
+      <workItem from="1711634285847" duration="117000" />
+      <workItem from="1711705688371" duration="3122000" />
+      <workItem from="1711708914103" duration="1621000" />
+      <workItem from="1711716764235" duration="455000" />
     </task>
     <task id="LOCAL-00001" summary="premier commit">
       <option name="closed" value="true" />
@@ -177,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711112746262</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fin de la classe GestionEmp">
+      <option name="closed" value="true" />
+      <created>1711119768252</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711119768252</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +234,7 @@
     <MESSAGE value="ajout et correction de toutes les méthodes ainsi que les listes" />
     <MESSAGE value="mise a jour du code ( ajout connexion base de données)" />
     <MESSAGE value="Fin de la classe Gestion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fin de la classe Gestion" />
+    <MESSAGE value="Fin de la classe GestionEmp" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fin de la classe GestionEmp" />
   </component>
 </project>
