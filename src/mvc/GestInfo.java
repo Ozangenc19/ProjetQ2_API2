@@ -29,7 +29,7 @@ public class GestInfo{
             switch (ch){
                 case 1: ev.menu();
                     break;
-                case 4: System.exit(0);
+                case 2: System.exit(0);
             }
         }while(true);
     }
