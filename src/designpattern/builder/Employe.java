@@ -1,8 +1,5 @@
 package designpattern.builder;
 
-import Informatique.metier.Competence;
-import Informatique.metier.Disciplines;
-import Informatique.metier.ListeDisciplinesEtNiveau;
 import Informatique.metier.Projet;
 
 import java.util.ArrayList;
@@ -16,6 +13,12 @@ import java.util.Objects;
  * @version 1.0
  */
 public class Employe {
+
+    /**
+     * création d'id pour auto incrémentation
+     */
+    private static int id = 1;
+
     /**
      * identifiant, numéro de l'employe
      */
@@ -36,19 +39,79 @@ public class Employe {
      */
     protected String prenom;
 
+    /**
+     * téléphone de l'employe
+     */
+    protected String tel;
 
     /**
-     * constructeur paramétré
-     * @param eb objet de la classe EmployeBuilder contenant les informations d'initialisation
+     * mail de l'employe
+     */
+    protected String mail;
+
+    /**
+     * liste des projets
      */
 
-    public Employe(EmployeBuilder eb){
-        this.id_employe = eb.idemploye;
-        this.matricule = eb.matricule;
-        this.nom = eb.nom;
-        this.prenom = eb.prenom;
+    protected List<Projet> projets = new ArrayList<>();
+
+    /**
+     * liste des compétences
+     */
+    protected List<Competence> ListeCompt = new ArrayList<>();
+
+    /**
+     * liste du niveau pour chaque discipline
+     */
+    protected List<ListeDisciplinesEtNiveau> ListDiscNiveau = new ArrayList<>();
+
+
+    /**
+     * Constructeur paramétré de la classe Employe
+     *
+     * @param id        id de l'employe
+     * @param matricule matricule de l'employe
+     * @param nom       nom de l'employe
+     * @param prenom    prénom de l'employe
+     * @param tel       téléphone de l'employe
+     * @param mail      mail de l'employe
+     */
+    public Employe(int id, String matricule, String nom, String prenom, String tel, String mail) {
+        this.id_employe = id++;
+        this.matricule = matricule;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.tel = tel;
+        this.mail = mail;
+
     }
 
+    /**
+     * Constructeur paramétré de la classe Employe
+     *
+     * @param matricule matricule de l'employe
+     * @param nom       nom de l'employe
+     * @param prenom    prénom de l'employe
+     * @param tel       téléphone de l'employe
+     * @param mail      mail de l'employe
+     */
+    public Employe(String matricule, String nom, String prenom, String tel, String mail) {
+        this.id_employe = id++;
+        this.matricule = matricule;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.tel = tel;
+        this.mail = mail;
+    }
+
+    /**
+     * setter de la liste compétence
+     *
+     * @param listeCompt listeCompt
+     */
+    public void setListeCompt(List<Competence> listeCompt) {
+        ListeCompt = listeCompt;
+    }
 
     /**
      * getter du numéro de l'employe
@@ -122,69 +185,58 @@ public class Employe {
         this.prenom = prenom;
     }
 
-
-    @Override
-    public String toString() {
-        return "Employe{" +
-                "id_employe=" + id_employe +
-                ", matricule='" + matricule + '\'' +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                '}';
+    /**
+     * getter du téléphone de l'employe
+     *
+     * @return téléphone de l'employe
+     */
+    public String getTel() {
+        return tel;
     }
 
-
-
-    public static class EmployeBuilder{
-
-        /**
-         * identifiant unique de l'employé
-         */
-        protected int idemploye;
-        /**
-         * matricule de l'employé
-         */
-        protected String matricule;
-        /**
-         * nom de l'employé
-         */
-        protected String nom;
-        /**
-         * prenom de l'employé
-         */
-        protected String prenom;
-
-        public EmployeBuilder setIdemploye(int idemploye) {
-            this.idemploye = idemploye;
-            return this;
-        }
-
-        public EmployeBuilder setMatricule(String matricule) {
-            this.matricule = matricule;
-            return this;
-        }
-
-        public EmployeBuilder setNom(String nom) {
-            this.nom = nom;
-            return this;
-        }
-
-        public EmployeBuilder setPrenom(String prenom) {
-            this.prenom = prenom;
-            return this;
-        }
-
-        /*
-        public Employe build() throws Exception{
-            if (idemploye<=0 || matricule==null || nom==null || prenom==null ) throw new Exception("informations de constuctions incomplètes"){
-             return new Employe(this);
-            }
-        }
-        */
-
+    /**
+     * setter du téléphone de l'employe
+     *
+     * @param tel téléphone de l'employe
+     */
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
+    /**
+     * getter du mail de l'employe
+     *
+     * @return mail de l'employe
+     */
+    public String getMail() {
+        return mail;
+    }
 
+    /**
+     * setter du mail de l'employe
+     *
+     * @param mail mail de l'employe
+     */
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
 
+    /**
+     * getter de la liste des projets
+     *
+     * @return projet liste des projets
+     */
+    public List<Projet> getProjets() {
+        return projets;
+    }
+
+    /**
+     * setter de la liste des projets
+     *
+     * @param projets liste des projets
+     */
+    public void setProjets(List<Projet> projets) {
+        this.projets = projets;
+    }
 
 }

@@ -1,6 +1,7 @@
 package mvc.model;
 
 import Informatique.metier.Employe;
+import Informatique.metier.Projet;
 import mvc.observer.Subject;
 
 import java.util.List;

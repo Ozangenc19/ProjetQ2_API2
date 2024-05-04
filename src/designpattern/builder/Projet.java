@@ -1,4 +1,4 @@
-package Informatique.metier;
+package designpattern.builder;
 
 
 import java.math.BigDecimal;
@@ -63,10 +63,10 @@ public class Projet {
     /**
      * Constructeur paramétré de la classe Projet
      *
-     * @param nom       nom du projet
-     * @param dateDebut date de début du projet
-     * @param dateFin   date de fin du projet
-     * @param cout      cout total du projet
+     * @param nom         nom du projet
+     * @param dateDebut   date de début du projet
+     * @param dateFin     date de fin du projet
+     * @param cout        cout total du projet
      * @param responsable objet de la table Employe
      */
     public Projet(String nom, LocalDate dateDebut, LocalDate dateFin, BigDecimal cout, Employe responsable) {
@@ -326,29 +326,5 @@ public class Projet {
         }
         return false; // La discipline n'a pas été trouvée et supprimée
     }
-
-
-    /**
-     * convertion de l'objet Projet en une chaîne de caractères représentative
-     *
-     * @return les informations du Projet
-     */
-    @Override
-    public String toString() {
-        return "Projet{" + "nom='" + nom + '\'' + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", cout=" + cout + ", responsable=" + responsable + ", Listeinvest=" + Listeinvest + '}';
-    }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Projet projet = (Projet) o;
-        return Objects.equals(nom, projet.nom) && Objects.equals(dateDebut, projet.dateDebut) && Objects.equals(dateFin, projet.dateFin) && Objects.equals(cout, projet.cout) && Objects.equals(responsable, projet.responsable) && Objects.equals(Listeinvest, projet.Listeinvest);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(nom, dateDebut, dateFin, cout, responsable, Listeinvest);
-    }
 }
+

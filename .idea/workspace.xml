@@ -5,7 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="Fin mvc">
+      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/Competence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/Disciplines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/Investissement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/ListeDisciplinesEtInvestissement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/ListeDisciplinesEtNiveau.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/NiveauResponsableDisciplines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/Projet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/Competence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/Disciplines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/Investissement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/ListeDisciplinesEtInvestissement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/ListeDisciplinesEtNiveau.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/NiveauResponsableDisciplines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/Projet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/Competence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/Disciplines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/Investissement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/ListeDisciplinesEtInvestissement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/ListeDisciplinesEtNiveau.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/NiveauResponsableDisciplines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/Projet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mvc/model/DAOProjet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mvc/model/EmployeModelHyb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mvc/model/ProjetModelDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mvc/view/ProjetAbstractView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mvc/view/ProjetViewConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Projet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/builder/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/Employe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/composite/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/composite/Employe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/observer/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/observer/Employe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/controller/EmployeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/model/DAOEmploye.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/model/DAOEmploye.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/model/EmployeModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/model/EmployeModelDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +90,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/libjava",
+    "last_opened_file_path": "C:/Users/ozant/OneDrive - HEPH-Condorcet/Bureau/BAC 2 Q2/API 2/ProjetQ2_API2/src/designpattern/observer",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -163,7 +196,16 @@
       <workItem from="1712326349376" duration="4008000" />
       <workItem from="1712330409364" duration="69000" />
       <workItem from="1712402763984" duration="91000" />
-      <workItem from="1712495399206" duration="1715000" />
+      <workItem from="1712495399206" duration="1964000" />
+      <workItem from="1712566930861" duration="153000" />
+      <workItem from="1712666289329" duration="17000" />
+      <workItem from="1712669145835" duration="27000" />
+      <workItem from="1712907751116" duration="12000" />
+      <workItem from="1712907781629" duration="297000" />
+      <workItem from="1712911645771" duration="17000" />
+      <workItem from="1712912345963" duration="5089000" />
+      <workItem from="1713257253021" duration="504000" />
+      <workItem from="1714818360937" duration="1381000" />
     </task>
     <task id="LOCAL-00001" summary="premier commit">
       <option name="closed" value="true" />
@@ -261,7 +303,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712330371837</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fin mvc">
+      <option name="closed" value="true" />
+      <created>1712497358565</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1712497358565</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,13 +1,9 @@
 package designpattern.observer;
 
-import Informatique.metier.Competence;
-import Informatique.metier.Disciplines;
-import Informatique.metier.ListeDisciplinesEtNiveau;
 import Informatique.metier.Projet;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * classe Employe de gestion de projet
@@ -72,14 +68,14 @@ public class Employe {
     /**
      * Constructeur paramétré de la classe Employe
      *
-     * @param id_employe id de l'employe
+     * @param id        id de l'employe
      * @param matricule matricule de l'employe
      * @param nom       nom de l'employe
      * @param prenom    prénom de l'employe
      * @param tel       téléphone de l'employe
      * @param mail      mail de l'employe
      */
-    public Employe(int id_employe, String matricule, String nom, String prenom, String tel, String mail) {
+    public Employe(int id, String matricule, String nom, String prenom, String tel, String mail) {
         this.id_employe = id++;
         this.matricule = matricule;
         this.nom = nom;
@@ -242,96 +238,4 @@ public class Employe {
         this.projets = projets;
     }
 
-
-    /**
-     * Retourne une liste des disciplines associées à leur niveau de compétence.
-     * Cette méthode parcourt la liste des compétences de l'employé et crée une liste de paires Discipline-Niveau.
-     * Note: Avant de retourner la liste, elle efface d'abord la liste actuelle pour éviter les duplications.
-     *
-     * @return Une liste de paires Discipline-Niveau représentant les disciplines et leur niveau de compétence.
-     */
-    public List<ListeDisciplinesEtNiveau> listeDisciplinesEtNiveau() {
-        ListDiscNiveau.clear();
-        for (Competence competence : ListeCompt) {
-            ListDiscNiveau.add(new ListeDisciplinesEtNiveau(competence.getDisciplines(), competence.getNiveau()));
-        }
-        return ListDiscNiveau;
-    }
-
-    /**
-     * Ajout d'une discipline avec un niveau
-     *
-     * @param discipline
-     * @param niveau
-     */
-    public void addDiscipline(Disciplines discipline, int niveau) {
-        Competence competence = new Competence(discipline, niveau);
-        ListeCompt.add(competence);
-    }
-
-    /**
-     * Modification du niveau d'un discipline
-     *
-     * @param discipline
-     * @param niveau
-     */
-
-    public boolean modifDiscipline(Disciplines discipline, int niveau) {
-        for (Competence c : ListeCompt) {
-            if (c.getDisciplines().equals(discipline)) {
-                c.setNiveau(niveau);
-                return true;
-            }
-        }
-        return false; // La discipline n'a pas été trouvée et modifiée
-    }
-
-    /**
-     * Suppression d'une discipline
-     *
-     * @param discipline
-     */
-
-    public boolean supprimerDiscipline(Disciplines discipline) {
-        for (Competence c : ListeCompt) {
-            if (c.getDisciplines().equals(discipline)) {
-                return ListeCompt.remove(c);
-
-            }
-        }
-        return false; // La discipline n'a pas été trouvée et supprimée
-    }
-
-    /**
-     * convertion de l'objet Employe en une chaîne de caractères représentative
-     *
-     * @return les informations de l'employe
-     */
-    @Override
-    public String toString() {
-        return "Employe{" +
-                "id_employe=" + id_employe +
-                ", matricule='" + matricule + '\'' +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", tel='" + tel + '\'' +
-                ", mail='" + mail + '\'' +
-                ", projets=" + projets +
-                ", ListeCompt=" + ListeCompt +
-                '}';
-    }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employe employe = (Employe) o;
-        return id_employe == employe.id_employe && Objects.equals(matricule, employe.matricule) && Objects.equals(nom, employe.nom) && Objects.equals(prenom, employe.prenom) && Objects.equals(tel, employe.tel) && Objects.equals(mail, employe.mail) && Objects.equals(projets, employe.projets) && Objects.equals(ListeCompt, employe.ListeCompt);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id_employe, matricule, nom, prenom, tel, mail, projets, ListeCompt);
-    }
 }
