@@ -51,7 +51,7 @@ public class Employe {
      * liste des projets
      */
 
-    protected List<Projet> projets = new ArrayList<>();
+    protected List<Projet> ListeProjet = new ArrayList<>();
 
     /**
      * liste des compétences
@@ -100,6 +100,14 @@ public class Employe {
         this.prenom = prenom;
         this.tel = tel;
         this.mail = mail;
+    }
+
+    /**
+     * getter de la liste compétence
+     * @return ListeCompt
+     */
+    public List<Competence> getListeCompt() {
+        return ListeCompt;
     }
 
     /**
@@ -224,8 +232,8 @@ public class Employe {
      *
      * @return projet liste des projets
      */
-    public List<Projet> getProjets() {
-        return projets;
+    public List<Projet> getListeProjet() {
+        return ListeProjet;
     }
 
     /**
@@ -233,9 +241,10 @@ public class Employe {
      *
      * @param projets liste des projets
      */
-    public void setProjets(List<Projet> projets) {
-        this.projets = projets;
+    public void setListeProjet(List<Projet> projets) {
+        this.ListeProjet = projets;
     }
+
 
 
     /**
@@ -320,11 +329,11 @@ public class Employe {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employe employe = (Employe) o;
-        return id_employe == employe.id_employe && Objects.equals(matricule, employe.matricule) && Objects.equals(nom, employe.nom) && Objects.equals(prenom, employe.prenom) && Objects.equals(tel, employe.tel) && Objects.equals(mail, employe.mail) && Objects.equals(projets, employe.projets) && Objects.equals(ListeCompt, employe.ListeCompt);
+        return id_employe == employe.id_employe && Objects.equals(matricule, employe.matricule) && Objects.equals(nom, employe.nom) && Objects.equals(prenom, employe.prenom) && Objects.equals(tel, employe.tel) && Objects.equals(mail, employe.mail) && Objects.equals(ListeProjet, employe.ListeProjet) && Objects.equals(ListeCompt, employe.ListeCompt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id_employe, matricule, nom, prenom, tel, mail, projets, ListeCompt);
+        return Objects.hash(id_employe, matricule, nom, prenom, tel, mail, ListeProjet, ListeCompt);
     }
 }

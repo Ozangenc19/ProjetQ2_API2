@@ -39,11 +39,11 @@ public class Investissement {
      * Constructeur paramétré de la classe Investissement
      *
      * @param disciplines objet Disciplines
-     * @param quantite    quantite de JH
+     * @param quantiteJH    quantite de JH
      */
-    public Investissement(Disciplines disciplines, int quantite) {
+    public Investissement(Disciplines disciplines, int quantiteJH) {
         this.discipline = disciplines;
-        this.quantiteJH = quantite;
+        this.quantiteJH = quantiteJH;
         this.id_invest = idInvest++;
 
     }

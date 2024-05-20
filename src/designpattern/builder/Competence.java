@@ -38,9 +38,9 @@ public class Competence {
      * @param discipline discipline de la compétence
      * @param niveau     niveau de la compétence
      */
-    public Competence(Disciplines discipline, int niveau) {
-        this.disciplines = discipline;
+    public Competence(int niveau, Disciplines discipline) {
         this.niveau = niveau;
+        this.disciplines = discipline;
         this.id_competence = id_comp++;
 
     }

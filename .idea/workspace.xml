@@ -4,41 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="Fin mvc">
-      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/Competence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/Disciplines.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/Investissement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/ListeDisciplinesEtInvestissement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/ListeDisciplinesEtNiveau.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/NiveauResponsableDisciplines.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/Projet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/Competence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/Disciplines.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/Investissement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/ListeDisciplinesEtInvestissement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/ListeDisciplinesEtNiveau.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/NiveauResponsableDisciplines.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/composite/Projet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/Competence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/Disciplines.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/Investissement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/ListeDisciplinesEtInvestissement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/ListeDisciplinesEtNiveau.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/NiveauResponsableDisciplines.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpattern/observer/Projet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mvc/model/DAOProjet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mvc/model/EmployeModelHyb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mvc/model/ProjetModelDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mvc/view/ProjetAbstractView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mvc/view/ProjetViewConsole.java" afterDir="false" />
+    <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="maj du code et correction de quelques bug">
+      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mvc/controller/EmployeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mvc/controller/ProjetController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Employe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Investissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Investissement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/NiveauResponsableDisciplines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/NiveauResponsableDisciplines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Projet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/builder/Competence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/Competence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/designpattern/builder/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/Employe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/builder/Investissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/Investissement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/builder/ListeDisciplinesEtNiveau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/ListeDisciplinesEtNiveau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/builder/NiveauResponsableDisciplines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/NiveauResponsableDisciplines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/builder/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/Projet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/designpattern/composite/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/composite/Employe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/composite/Investissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/composite/Investissement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/composite/ListeDisciplinesEtNiveau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/composite/ListeDisciplinesEtNiveau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/composite/NiveauResponsableDisciplines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/composite/NiveauResponsableDisciplines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/composite/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/composite/Projet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/observer/Competence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/observer/Competence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/designpattern/observer/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/observer/Employe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mvc/controller/EmployeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/observer/Investissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/observer/Investissement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/observer/ListeDisciplinesEtNiveau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/observer/ListeDisciplinesEtNiveau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/observer/NiveauResponsableDisciplines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/observer/NiveauResponsableDisciplines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/observer/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/observer/Projet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/model/DAOEmploye.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/model/DAOEmploye.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/model/DAOProjet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/model/DAOProjet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/model/EmployeModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/model/EmployeModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/model/EmployeModelHyb.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/model/ProjetModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/model/ProjetModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/view/EmployeAbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/view/EmployeAbstractView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/view/EmployeViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/view/EmployeViewConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/view/ProjetAbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/view/ProjetAbstractView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,30 +80,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GestInfo.executor": "Run",
-    "Application.GestionEmp.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ozant/OneDrive - HEPH-Condorcet/Bureau/BAC 2 Q2/API 2/ProjetQ2_API2/src/designpattern/observer",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GestInfo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GestionEmp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ozant/OneDrive - HEPH-Condorcet/Bureau/BAC 2 Q2/API 2/ProjetQ2_API2/src/designpattern/observer&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ozant\OneDrive - HEPH-Condorcet\Bureau\BAC 2 Q2\API 2\ProjetQ2_API2\src\designpattern\observer" />
+      <recent name="C:\Users\ozant\OneDrive - HEPH-Condorcet\Bureau\BAC 2 Q2\API 2\ProjetQ2_API2\src\designpattern\composite" />
       <recent name="C:\Users\ozant\OneDrive - HEPH-Condorcet\Bureau\BAC 2 Q2\API 2\ProjetQ2_API2\src" />
       <recent name="C:\Users\ozant\OneDrive - HEPH-Condorcet\Bureau\BAC 2 Q2\API 2\ProjetQ2_API2\src\mvc" />
       <recent name="C:\Users\genc0\OneDrive - HEPH-Condorcet\Bureau\BAC 2 Q2\API 2\ProjetQ2_API2\src" />
@@ -118,8 +121,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
       </set>
     </attachedChunks>
   </component>
@@ -205,7 +208,19 @@
       <workItem from="1712911645771" duration="17000" />
       <workItem from="1712912345963" duration="5089000" />
       <workItem from="1713257253021" duration="504000" />
-      <workItem from="1714818360937" duration="1381000" />
+      <workItem from="1714818360937" duration="1757000" />
+      <workItem from="1714913355027" duration="561000" />
+      <workItem from="1714914087296" duration="7000" />
+      <workItem from="1714914109299" duration="56000" />
+      <workItem from="1714914561013" duration="1351000" />
+      <workItem from="1714916172198" duration="1972000" />
+      <workItem from="1715268399267" duration="14000" />
+      <workItem from="1715683183734" duration="691000" />
+      <workItem from="1716057365413" duration="23000" />
+      <workItem from="1716059165270" duration="279000" />
+      <workItem from="1716059495441" duration="6900000" />
+      <workItem from="1716205462185" duration="54000" />
+      <workItem from="1716205564545" duration="12041000" />
     </task>
     <task id="LOCAL-00001" summary="premier commit">
       <option name="closed" value="true" />
@@ -311,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712497358565</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="maj du code et correction de quelques bug">
+      <option name="closed" value="true" />
+      <created>1714819844349</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714819844349</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,6 +361,7 @@
     <MESSAGE value="Fin de la classe Gestion" />
     <MESSAGE value="Fin de la classe GestionEmp" />
     <MESSAGE value="Fin mvc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fin mvc" />
+    <MESSAGE value="maj du code et correction de quelques bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="maj du code et correction de quelques bug" />
   </component>
 </project>

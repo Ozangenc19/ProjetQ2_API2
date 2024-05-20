@@ -1,5 +1,6 @@
 package mvc.view;
 
+import Informatique.metier.Disciplines;
 import Informatique.metier.Employe;
 import mvc.controller.EmployeController;
 
@@ -99,5 +100,32 @@ public class EmployeViewConsole extends EmployeAbstractView {
         return ep;
     }
 
+    private void special(Employe emp) {
+        do {
+            affMsg(" Employe " + emp.toString());
+
+            int choix = choixListe(Arrays.asList("ajouter une discipline", "modifier une discipline", "supprimer une discipline", "lister une discipline","fin"));
+            switch (choix) {
+                case 1:
+                    ajouterDidscipline(emp);
+                    break;
+                case 2:
+                    modfifierDiscipline(emp);
+                    break;
+                case 3:
+                    supprimerDiscipline(emp);
+                    break;
+                case 4:
+                    listerDisciplines(emp);
+                    break;
+                case 5:
+                    return;
+                default:
+                    System.out.println("choix invalide recommencez ");
+            }
+        } while (true);
+    }
+
+   //TODO faire les méthodes apres avoir finis le mvc disciplines
 
 }

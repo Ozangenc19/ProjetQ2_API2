@@ -10,9 +10,10 @@ import java.util.List;
 
 public abstract class EmployeAbstractView  implements Observer {
     protected EmployeController empController;
+    //TODO faire discipline dans ce code
     protected List<Employe> le;
 
-    public void setController(EmployeController empController) {
+    public void setEmployeController(EmployeController empController) {
         this.empController = empController;
     }
     public abstract void affMsg(String msg);

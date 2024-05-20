@@ -18,15 +18,41 @@ public class NiveauResponsableDisciplines {
     protected int niveau;
 
     /**
+     * nom du responsable
+     */
+    protected String nom;
+
+    /**
      * Crée une nouvelle instance de NiveauResponsableDisciplines avec la discipline spécifiée
      * et le niveau de responsabilité associé.
      *
      * @param discipline la discipline à associer à cette instance de niveau de responsabilité
      * @param niveau     le niveau de responsabilité associé à cette discipline
      */
-    public NiveauResponsableDisciplines(Disciplines discipline, int niveau) {
+    public NiveauResponsableDisciplines(Disciplines discipline, int niveau, String nom) {
         this.discipline = discipline;
         this.niveau = niveau;
+        this.nom = nom;
+    }
+
+    public NiveauResponsableDisciplines(Informatique.metier.Disciplines disciplines, int niveau, String nom) {
+
+    }
+
+    /**
+     * getter du nom du responsable
+     * @return nom
+     */
+    public String getNom() {
+        return nom;
+    }
+
+    /**
+     * setter du nom du responsable
+     * @return nom
+     */
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     /**

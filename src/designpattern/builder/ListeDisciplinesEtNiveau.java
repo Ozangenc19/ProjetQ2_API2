@@ -29,6 +29,10 @@ public class ListeDisciplinesEtNiveau {
         this.niveau = niveau;
     }
 
+    public ListeDisciplinesEtNiveau(Informatique.metier.Disciplines disciplines, int niveau) {
+
+    }
+
     /**
      * getter d'une discipline
      *

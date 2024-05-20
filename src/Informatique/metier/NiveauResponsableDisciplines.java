@@ -16,6 +16,10 @@ public class NiveauResponsableDisciplines {
      * niveau d'un responsable par rapport à ca discipline
      */
     protected int niveau;
+    /**
+     * nom du responsable
+     */
+    protected String nom;
 
     /**
      * Crée une nouvelle instance de NiveauResponsableDisciplines avec la discipline spécifiée
@@ -24,9 +28,10 @@ public class NiveauResponsableDisciplines {
      * @param discipline la discipline à associer à cette instance de niveau de responsabilité
      * @param niveau     le niveau de responsabilité associé à cette discipline
      */
-    public NiveauResponsableDisciplines(Disciplines discipline, int niveau) {
+    public NiveauResponsableDisciplines(Disciplines discipline, int niveau, String nom) {
         this.discipline = discipline;
         this.niveau = niveau;
+        this.nom = nom;
     }
 
     /**
