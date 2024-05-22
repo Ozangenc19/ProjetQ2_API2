@@ -5,39 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="maj du code et correction de quelques bug">
-      <change afterPath="$PROJECT_DIR$/src/designpattern/builder/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mvc/controller/EmployeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mvc/controller/ProjetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mvc/controller/DisciplineController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mvc/model/DAODiscipline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mvc/model/DisciplineModelDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mvc/view/DisciplineAbstractView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mvc/view/DisciplineViewConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Employe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Investissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Investissement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/NiveauResponsableDisciplines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/NiveauResponsableDisciplines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Disciplines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Disciplines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Projet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/builder/Competence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/Competence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/builder/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/Employe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/builder/Investissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/Investissement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/builder/ListeDisciplinesEtNiveau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/ListeDisciplinesEtNiveau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/builder/NiveauResponsableDisciplines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/NiveauResponsableDisciplines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/builder/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/Projet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/composite/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/composite/Employe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/composite/Investissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/composite/Investissement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/composite/ListeDisciplinesEtNiveau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/composite/ListeDisciplinesEtNiveau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/composite/NiveauResponsableDisciplines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/composite/NiveauResponsableDisciplines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/composite/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/composite/Projet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/observer/Competence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/observer/Competence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/observer/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/observer/Employe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/observer/Investissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/observer/Investissement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/observer/ListeDisciplinesEtNiveau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/observer/ListeDisciplinesEtNiveau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/observer/NiveauResponsableDisciplines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/observer/NiveauResponsableDisciplines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/designpattern/observer/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/observer/Projet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpattern/builder/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpattern/builder/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/GestInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/GestInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/controller/EmployeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/controller/EmployeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/controller/ProjetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/controller/ProjetController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/model/DAOEmploye.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/model/DAOEmploye.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/model/DAOProjet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/model/DAOProjet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/model/EmployeModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/model/EmployeModelDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mvc/model/EmployeModelHyb.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/model/ProjetModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/model/ProjetModelDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/view/EmployeAbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/view/EmployeAbstractView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/view/EmployeViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/view/EmployeViewConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/view/ProjetAbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/view/ProjetAbstractView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/view/ProjetViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/view/ProjetViewConsole.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,6 +208,19 @@
       <workItem from="1716059495441" duration="6900000" />
       <workItem from="1716205462185" duration="54000" />
       <workItem from="1716205564545" duration="12041000" />
+      <workItem from="1716217827034" duration="141000" />
+      <workItem from="1716224489968" duration="1053000" />
+      <workItem from="1716225558241" duration="1427000" />
+      <workItem from="1716288946272" duration="6494000" />
+      <workItem from="1716298810005" duration="2024000" />
+      <workItem from="1716300857801" duration="4000" />
+      <workItem from="1716300884149" duration="9187000" />
+      <workItem from="1716311481501" duration="14000" />
+      <workItem from="1716315355637" duration="16000" />
+      <workItem from="1716316422964" duration="66000" />
+      <workItem from="1716318154179" duration="341000" />
+      <workItem from="1716318708363" duration="607000" />
+      <workItem from="1716323106788" duration="753000" />
     </task>
     <task id="LOCAL-00001" summary="premier commit">
       <option name="closed" value="true" />
@@ -334,7 +334,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714819844349</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="maj du code et correction de quelques bug">
+      <option name="closed" value="true" />
+      <created>1716217867038</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716217867038</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

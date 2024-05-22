@@ -1,9 +1,6 @@
 package mvc.model;
 
-import Informatique.metier.Competence;
-import Informatique.metier.Disciplines;
-import Informatique.metier.Employe;
-import Informatique.metier.Projet;
+import Informatique.metier.*;
 import myconnections.DBConnection;
 
 
@@ -184,7 +181,7 @@ public class EmployeModelDB extends DAOEmploye {
     }
 
     @Override
-    public boolean removeDisicpline(Employe employe, Disciplines disciplines) {
+    public boolean suppDisicpline(Employe employe, Disciplines disciplines) {
         String query = "DELETE FROM  API2_COMPETENCE where  id_employe = ? AND id_discipline = ?";
         try (PreparedStatement pstm = dbConnect.prepareStatement(query)) {
             pstm.setInt(1, employe.getId_employe());
@@ -197,6 +194,11 @@ public class EmployeModelDB extends DAOEmploye {
             System.err.println("erreur sql :" + e);
             return false;
         }
+    }
+
+    @Override
+    public List<ListeDisciplinesEtNiveau> listeDisciplinesEtNiveaus() {
+        return List.of();
     }
 
 

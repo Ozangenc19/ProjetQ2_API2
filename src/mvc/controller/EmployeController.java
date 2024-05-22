@@ -1,15 +1,12 @@
 package mvc.controller;
 
-import Informatique.metier.Competence;
-import Informatique.metier.Disciplines;
-import Informatique.metier.Employe;
-import Informatique.metier.Projet;
+import Informatique.metier.*;
 import mvc.model.DAOEmploye;
 import mvc.view.EmployeAbstractView;
 
 import java.util.List;
 
-public class EmployeController {
+public class EmployeController  {
     private DAOEmploye model;
     private EmployeAbstractView view;
 
@@ -46,8 +43,12 @@ public class EmployeController {
         return model.updateDiscipline(employe,disciplines,niveau);
     }
 
-    public boolean removeDiscipline(Employe employe, Disciplines disciplines){
-        return model.removeDisicpline(employe,disciplines);
+    public boolean suppDiscipline(Employe employe, Disciplines disciplines){
+        return model.suppDisicpline(employe,disciplines);
+    }
+
+    public List<ListeDisciplinesEtNiveau> listeDisciplinesEtNiveau(){
+        return model.listeDisciplinesEtNiveaus();
     }
 
 

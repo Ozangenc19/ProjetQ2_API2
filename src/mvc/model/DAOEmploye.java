@@ -1,9 +1,6 @@
 package mvc.model;
 
-import Informatique.metier.Competence;
-import Informatique.metier.Disciplines;
-import Informatique.metier.Employe;
-import Informatique.metier.Projet;
+import Informatique.metier.*;
 import mvc.observer.Subject;
 
 import java.util.List;
@@ -23,7 +20,9 @@ public abstract class DAOEmploye extends Subject {
 
     public abstract boolean updateDiscipline(Employe employe, Disciplines disciplines, int niveau);
 
-    public abstract boolean removeDisicpline(Employe employe, Disciplines disciplines);
+    public abstract boolean suppDisicpline(Employe employe, Disciplines disciplines);
+
+    public abstract List<ListeDisciplinesEtNiveau> listeDisciplinesEtNiveaus();
 
     public abstract List<Projet> listeProjets(Employe employe);
 

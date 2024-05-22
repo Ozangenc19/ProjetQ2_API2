@@ -99,6 +99,9 @@ public class Projet {
         this.responsable = employe;
     }
 
+    public Projet(){
+
+    }
 
     /**
      * getter numéro du projet

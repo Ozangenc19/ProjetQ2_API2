@@ -1,8 +1,6 @@
 package mvc.controller;
 
-import Informatique.metier.Disciplines;
-import Informatique.metier.Investissement;
-import Informatique.metier.Projet;
+import Informatique.metier.*;
 import mvc.model.DAOProjet;
 import mvc.view.ProjetAbstractView;
 
@@ -15,7 +13,7 @@ public class ProjetController {
     public ProjetController(DAOProjet model, ProjetAbstractView view) {
         this.model = model;
         this.view = view;
-        this.view.setController(this);
+        this.view.setProjetController(this);
     }
 
     public List<Projet> getAll() {
@@ -46,12 +44,23 @@ public class ProjetController {
         return model.updateDiscipline(projet, disciplines, quantiteJH);
     }
 
-    public boolean removeDiscipline(Projet projet, Disciplines disciplines) {
-        return model.removeDiscipline(projet, disciplines);
+    public boolean suppDiscipline(Projet projet, Disciplines disciplines) {
+        return model.suppDiscipline(projet,disciplines);
     }
 
-    public List<Investissement> getProjets(Projet projet){
-        return model.getProjets(projet);
+    public List<ListeDisciplinesEtInvestissement> listeDisciplinesEtInvestissement(){
+        return model.listeDisciplinesEtInvestissement();
+    }
+
+    public List<NiveauResponsableDisciplines> niveauResponsableDiscipline(){
+        return model.niveauResponsableDiscipline();
+    }
+
+    public int investissementTotal(){
+        return model.investissementTotal();
+    }
+    public List<Investissement> getInvestissement(Projet projet){
+        return model.getInvestissement(projet);
     }
 }
 

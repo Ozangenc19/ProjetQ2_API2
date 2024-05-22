@@ -1,9 +1,6 @@
 package mvc.model;
 
-import Informatique.metier.Disciplines;
-import Informatique.metier.Employe;
-import Informatique.metier.Investissement;
-import Informatique.metier.Projet;
+import Informatique.metier.*;
 
 import myconnections.DBConnection;
 
@@ -200,7 +197,7 @@ public class ProjetModelDB extends DAOProjet {
     }
 
     @Override
-    public boolean removeDiscipline(Projet projet, Disciplines disciplines) {
+    public boolean suppDiscipline(Projet projet, Disciplines disciplines) {
         String query = "delete from API2_INVESTISSEMENT where id_projet=? and id_discipline=?";
         try (PreparedStatement pstm = dbConnect.prepareStatement(query)) {
             pstm.setInt(1, projet.getId_projet());
@@ -214,15 +211,34 @@ public class ProjetModelDB extends DAOProjet {
         }
     }
 
+    //TODO verifier et savoir si faut créer une table a part pour ajouter les infos des liasions
     @Override
-    public List<Investissement> getProjets(Projet projet) {
-
+    public List<ListeDisciplinesEtInvestissement> listeDisciplinesEtInvestissement() {
         return List.of();
+    }
+
+    @Override
+    public List<NiveauResponsableDisciplines> niveauResponsableDiscipline() {
+        return List.of();
+    }
+
+    @Override
+    public int investissementTotal() {
+        return 0;
+    }
+
+
+
+
+    @Override
+    public List<Investissement> getInvestissement(Projet projet) {
+
+        return projet.getListeinvest();
     }
 
     @Override
     public List getNotification() {
 
-        return List.of();
+        return getProjets();
     }
 }

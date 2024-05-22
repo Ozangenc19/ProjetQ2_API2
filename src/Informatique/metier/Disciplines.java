@@ -44,6 +44,21 @@ public class Disciplines {
 
 
     /**
+     *
+     * @param id_disc id de la discipline
+     * @param nom nom de la discipline
+     * @param description description de la discipline
+     */
+    public Disciplines(int id_disc,String nom, String description) {
+        this.id_discipline = id_disc++;
+        this.nom = nom;
+        this.description = description;
+    }
+
+
+
+
+    /**
      * gette du numéro de la discipline
      * @return numéro de la discipline
      */
