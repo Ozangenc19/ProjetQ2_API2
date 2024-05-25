@@ -18,15 +18,15 @@ public abstract class DAOProjet extends Subject {
 
     public abstract boolean addDiscipline(Projet projet, Disciplines disciplines, int quantiteJH);
 
-    public abstract boolean updateDiscipline(Projet projet, Disciplines disciplines, int quantiteJH);
+    public abstract boolean modifDiscipline(Projet projet, Disciplines disciplines, int quantiteJH);
 
     public abstract boolean suppDiscipline(Projet projet, Disciplines disciplines);
 
-    public abstract List<ListeDisciplinesEtInvestissement> listeDisciplinesEtInvestissement();
+    public abstract List<Investissement> listeDisciplinesEtInvestissement(Projet projet);
 
-    public abstract List<NiveauResponsableDisciplines> niveauResponsableDiscipline();
+    public abstract List<Competence> niveauResponsableDiscipline(Projet projet);
 
-    public abstract int investissementTotal();
+    public abstract int investissementTotal(Projet projet);
 
     public abstract List<Investissement> getInvestissement(Projet projet);
 }

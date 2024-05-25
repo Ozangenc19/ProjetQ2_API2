@@ -4,7 +4,9 @@ import Informatique.metier.*;
 import myconnections.DBConnection;
 
 
+import java.math.BigDecimal;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -147,11 +149,11 @@ public class EmployeModelDB extends DAOEmploye {
 
     @Override
     public boolean addDiscipline(Employe employe, Disciplines disciplines, int niveau) {
-        String query = "insert into API2_COMPETENCE(id_employe,id_discipline,niveau) values(?,?,?)";
+        String query = "insert into API2_COMPETENCE(id_discipline,id_employe,niveau) values(?,?,?)";
         try (PreparedStatement pstm = dbConnect.prepareStatement(query);
         ) {
-            pstm.setInt(1, employe.getId_employe());
-            pstm.setInt(2, disciplines.getId_discipline());
+            pstm.setInt(1, disciplines.getId_discipline());
+            pstm.setInt(2, employe.getId_employe());
             pstm.setInt(3, niveau);
             int n = pstm.executeUpdate();
             if (n != 0) return true;
@@ -164,12 +166,13 @@ public class EmployeModelDB extends DAOEmploye {
     }
 
     @Override
-    public boolean updateDiscipline(Employe employe, Disciplines disciplines, int niveau) {
-        String query = "update API2_COMPETENCE set niveau =? where id_employe = ? AND id_discipline = ?";
+    public boolean modifDiscipline(Employe employe, Disciplines disciplines, int niveau) {
+        String query = "update API2_COMPETENCE set niveau =? where id_discipline  = ? AND id_employe = ?";
         try (PreparedStatement pstm = dbConnect.prepareStatement(query)) {
             pstm.setInt(1, niveau);
-            pstm.setInt(2, employe.getId_employe());
-            pstm.setInt(3, disciplines.getId_discipline());
+            pstm.setInt(2, disciplines.getId_discipline());
+            pstm.setInt(3, employe.getId_employe());
+
             int n = pstm.executeUpdate();
             if (n != 0) return true;
             else return false;
@@ -182,10 +185,10 @@ public class EmployeModelDB extends DAOEmploye {
 
     @Override
     public boolean suppDisicpline(Employe employe, Disciplines disciplines) {
-        String query = "DELETE FROM  API2_COMPETENCE where  id_employe = ? AND id_discipline = ?";
+        String query = "DELETE FROM  API2_COMPETENCE where id_discipline  = ? AND id_employe = ?";
         try (PreparedStatement pstm = dbConnect.prepareStatement(query)) {
-            pstm.setInt(1, employe.getId_employe());
-            pstm.setInt(2, disciplines.getId_discipline());
+            pstm.setInt(1, disciplines.getId_discipline());
+            pstm.setInt(2, employe.getId_employe());
             int n = pstm.executeUpdate();
             if (n != 0) return true;
             else return false;
@@ -197,19 +200,79 @@ public class EmployeModelDB extends DAOEmploye {
     }
 
     @Override
-    public List<ListeDisciplinesEtNiveau> listeDisciplinesEtNiveaus() {
-        return List.of();
+    public List<Competence> listeDisciplinesEtNiveaus(Employe employe) {
+        String query1 = "SELECT * FROM API2_COMPETENCE WHERE id_employe = ?";
+        String query2 = "SELECT * FROM API2_DISCIPLINE WHERE id_discipline = ?";
+        List<Competence> lc = new ArrayList<>();
+        try (PreparedStatement pstm1 = dbConnect.prepareStatement(query1);
+             PreparedStatement pstm2 = dbConnect.prepareStatement(query2)) {
+            pstm1.setInt(1, employe.getId_employe());
+            ResultSet rs1 = pstm1.executeQuery();
+            while (rs1.next()) {
+                int id_discicipline = rs1.getInt(1);
+                int niveau = rs1.getInt(2);
+                int id_competence = rs1.getInt(4);
+
+
+                pstm2.setInt(1, id_discicipline);
+                ResultSet rs2 = pstm2.executeQuery();
+                Disciplines dis = null;
+                if (rs2.next()) {
+                    String nom = rs2.getString(2);
+                    String desccription = rs2.getString(3);
+                    dis = new Disciplines(id_discicipline,nom,desccription);
+                }
+                Competence comp = new Competence(id_competence, niveau, dis, employe);
+                lc.add(comp);
+            }
+        } catch (SQLException e) {
+            System.err.println("erreur sql :" + e);
+        }
+        return lc;
     }
+
+
 
 
     @Override
     public List<Projet> listeProjets(Employe employe) {
-        return employe.getListeProjet();
+        String query = "select * from  API2_PROJET where  id_employe = ?";
+        List<Projet> lp = new ArrayList<>();
+        try (PreparedStatement pstm = dbConnect.prepareStatement(query)) {
+            pstm.setInt(1, employe.getId_employe());
+            ResultSet rs = pstm.executeQuery();
+            while (rs.next()) {
+                int idProjet = rs.getInt(1);
+                String nom = rs.getString(2);
+                LocalDate datedebut = rs.getDate(3).toLocalDate();
+                LocalDate datefin = rs.getDate(4).toLocalDate();
+                BigDecimal cout = rs.getBigDecimal(5);
+                Projet p = new Projet(idProjet, nom, datedebut, datefin, cout, employe);
+                lp.add(p);
+            }
+        } catch (SQLException e) {
+            System.err.println("erreur sql :" + e);
+        }
+        return lp;
     }
 
     @Override
     public List<Competence> listeCompet(Employe employe) {
-        return employe.getListeCompt();
+        String query = "select * from API2_COMPETENCE where id_employe ";
+        List<Competence> lp = new ArrayList<>();
+        try (PreparedStatement pstm = dbConnect.prepareStatement(query)) {
+            pstm.setInt(1, employe.getId_employe());
+            ResultSet rs = pstm.executeQuery();
+            while (rs.next()) {
+                int idCompet = rs.getInt(1);
+                int niveau = rs.getInt(2);
+                Competence comp = new Competence(idCompet,niveau,employe);
+                lp.add(comp);
+            }
+        } catch (SQLException e) {
+            System.err.println("erreur sql :" + e);
+        }
+        return lp;
     }
 
     @Override

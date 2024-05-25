@@ -13,23 +13,26 @@ import java.util.Arrays;
 import java.util.List;
 
 public class GestInfo{
-    private DAOEmploye em;
-    private DAOProjet pm;
-    private DAODiscipline dm;
+    public static DAOEmploye em;
 
-    private EmployeController ec;
-    private ProjetController pc;
-    private DisciplineController dc;
+    public static DAOProjet pm;
+    public static DAODiscipline dm;
 
-    private EmployeAbstractView ev;
-    private ProjetAbstractView pv;
-    private DisciplineAbstractView dv;
+
+    public static EmployeController ec;
+    public static ProjetController pc;
+    public static DisciplineController dc;
+
+    public static EmployeAbstractView ev;
+    public static ProjetAbstractView pv;
+    public static DisciplineAbstractView dv;
 
     public void gestion(){
 
         em = new EmployeModelDB();
         pm = new ProjetModelDB();
         dm = new DisciplineModelDB();
+
 
         ev = new EmployeViewConsole();
         pv = new ProjetViewConsole();

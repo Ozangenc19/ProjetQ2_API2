@@ -1,10 +1,15 @@
 package mvc.view;
 
+
 import Informatique.metier.*;
+import mvc.GestInfo;
+
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -51,25 +56,69 @@ public class ProjetViewConsole extends ProjetAbstractView {
         } while (true);
 
     }
+
     private void ajouter() {
 
-        Employe responsable = empabview.selectionner();
-        Projet proj = new Projet();
-        proj.setResponsable(responsable);
-        //TODO une liste qui sera soit employe ou discipline (sais pas encore)
-        System.out.println("Nom du projet : ");
-        String nom = sc.next();
-        System.out.println("Date de début : ");
-        String dte = sc.next();
-        LocalDate datedebut = getDate(dte);
-        System.out.println(" Date de fin ");
-        dte = sc.next();
-        LocalDate datefin = getDate(dte);
-        System.out.println("Cout du projet : ");
-        BigDecimal cout = sc.nextBigDecimal();
-        Projet projet = projetController.addProjet(new Projet(0, nom, datedebut, datefin, cout, responsable));
-        if (projet != null) affMsg("creation de : "+ projet);
-        else affMsg("erreur de création");
+        Projet projet;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        do {
+            try {
+                System.out.print("Nom du projet : ");
+                String nom = sc.next();
+
+                LocalDate datedebut = null;
+                while (datedebut == null) {
+                    System.out.print("Date de début (dd/MM/yyyy) : ");
+                    String input = sc.next();
+                    try {
+                        datedebut = LocalDate.parse(input, formatter);
+                    } catch (DateTimeParseException e) {
+                        System.out.println("Format de date invalide. Veuillez réessayer.");
+                    }
+                }
+
+                LocalDate datefin = null;
+                while (datefin == null) {
+                    System.out.print("Date de fin (dd/MM/yyyy) : ");
+                    String input = sc.next();
+                    try {
+                        datefin = LocalDate.parse(input, formatter);
+                    } catch (DateTimeParseException e) {
+                        System.out.println("Format de date invalide. Veuillez réessayer.");
+                    }
+                }
+                BigDecimal cout = null;
+                while (cout == null) {
+                    System.out.print("Coût : ");
+                    String input = sc.next();
+                    try {
+                        cout = new BigDecimal(input).setScale(2, RoundingMode.HALF_UP);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Valeur de coût invalide. Veuillez entrer un nombre valide.");
+                    }
+                }
+                ;
+                List<Employe> le = GestInfo.em.getEmployes();// on reprend la liste de tous les employes
+                if (le.isEmpty()) {
+                    System.out.println("Aucun employé disponible pour être responsable.");
+                    return;
+                }
+                System.out.println("Responsable :");
+                int ch = choixListe(le);
+
+                if (ch <= 0 || ch > le.size()) {
+                    System.out.println("Choix invalide. Veuillez réessayer.");
+                    continue;
+                }
+                System.out.println(le.get(ch - 1));
+                projet = new Projet(nom, datedebut, datefin, cout, le.get(ch - 1));
+                System.out.println("Projet créé : " + projet);
+                projetController.addProjet(projet);
+                break;
+            } catch (Exception e) {
+                System.out.println("Erreur : " + e.getMessage());
+            }
+        } while (true);
     }
 
     private void supprimer() {
@@ -120,7 +169,7 @@ public class ProjetViewConsole extends ProjetAbstractView {
 
     private void operationspecial(Projet projet) {
         do {
-            int ch = choixListe(Arrays.asList("ajouter discipline", "modifier discipline", "supprimer discipline", "lister les disciplines", "menu principal"));
+            int ch = choixListe(Arrays.asList("ajouter discipline", "modifier discipline", "supprimer discipline", "lister les disciplines", "lister un investissement", "investissement total", "competence du responsable", "menu principal"));
 
             switch (ch) {
                 case 1:
@@ -136,6 +185,15 @@ public class ProjetViewConsole extends ProjetAbstractView {
                     listerDiscipline(projet);
                     break;
                 case 5:
+                    listerInvestissement(projet);
+                    break;
+                case 6:
+                    investissementTotal(projet);
+                    break;
+                case 7:
+                    niveauxResponsableDisciplines(projet);
+                    break;
+                case 8:
                     return;
                 default:
                     System.out.println("choix invalide recommencez ");
@@ -143,48 +201,85 @@ public class ProjetViewConsole extends ProjetAbstractView {
         } while (true);
 
     }
-    public void ajouterDiscipline(Projet projet){
-        System.out.println("Ajout d'un investissement");
-        Disciplines disciplines = disabview.selectionner();
+
+    public void ajouterDiscipline(Projet projet) {
+        List<Disciplines> ld = GestInfo.dm.getDisciplines();// on reprend la liste de toutes les disciplines
+        System.out.println("Ajout d'une discipline");
+        int choix = choixListe(ld);
         System.out.println("quantiteJH : ");
         int quantiteJH = sc.nextInt();
-        boolean ok = projetController.addDiscipline(projet,disciplines,quantiteJH);
+        boolean ok = projetController.addDiscipline(projet, ld.get(choix - 1), quantiteJH);
         if (ok) affMsg("discipline ajouté avec success");
-        else affMsg(" erreur lord e l'ajout de l'employe");
+        else affMsg(" erreur lord e l'ajout de la discipline");
     }
 
     private void modfifierDiscipline(Projet projet) {
-        System.out.println("Modification d'un investissement");
-        List<Investissement> li = projetController.getInvestissement(projet);
-        affList(li);
-        Investissement i = li.get(choixElt(li)-1);
-        Disciplines disciplines = i.getDiscipline();
+        List<Investissement> li = projetController.listeDisciplinesEtInvestissement(projet);
+        System.out.println("Modification d'une discipline");
+        int choix = choixElt(li);
         System.out.println("quantiteJH: ");
         int quantitejH = sc.nextInt();
-        boolean ok = projetController.updateDiscipline(projet,disciplines,quantitejH);
+        boolean ok = projetController.modifDiscipline(projet, li.get(choix - 1).getDiscipline(), quantitejH);
         if (ok) affMsg("Mise à jour éffectuée");
         else affMsg(" echec de la mise à jour");
     }
 
     private void supprimerDiscipline(Projet projet) {
+        List<Investissement> li = projetController.listeDisciplinesEtInvestissement(projet);
         System.out.println(" Suprresion d'un investissement ");
-        List<Investissement> li = projetController.getInvestissement(projet);
-        affList(li);
-        Investissement i = li.get(choixElt(li)-1);
-        Disciplines disciplines = i.getDiscipline();
-        boolean ok = projetController.suppDiscipline(projet,disciplines);
-        if (ok) affMsg("Competence supprimé avec succes");
+        int choix = choixElt(li);
+        boolean ok = projetController.suppDiscipline(projet, li.get(choix - 1).getDiscipline());
+        if (ok) affMsg("Discipline supprimé avec succes");
         else affMsg(" echec de la suppresion ");
     }
 
     private void listerDiscipline(Projet projet) {
-        System.out.println("Investissement d'un projet : "+projet);
-        List<Investissement> li = projetController.getInvestissement(projet);
+        System.out.println("Discipline d'un projet : " + projet);
+        List<Investissement> li = projetController.listeDisciplinesEtInvestissement(projet);
         if (li.isEmpty())
-            affMsg("aucune competence pour cette employe");
+            affMsg("aucune discipline pour cette employe");
         else affList(li);
     }
 
 
+    private void listerInvestissement(Projet projet) {
+        System.out.println("Investissement d'un projet : " + projet);
+        List<Investissement> li = projetController.getInvestissement(projet);
+        if (li.isEmpty())
+            affMsg("aucune discipline pour cette employe");
+        else affList(li);
+    }
 
+    private void investissementTotal(Projet projet) {
+        int total = projetController.investissementTotal(projet);
+
+        if (total == 0) {
+            affMsg("Aucun investissement pour ce projet");
+        } else
+            affMsg("Voici le total des investissement pour le projet '" + projet.getNom() + "' : " + total);
+    }
+
+    private void niveauxResponsableDisciplines(Projet projet) {
+        List<Investissement> li = projetController.listeDisciplinesEtInvestissement(projet);
+        List<Competence> lc = projetController.niveauResponsableDiscipline(projet);
+
+        if (lc.isEmpty()) {
+            affMsg("Aucune compétence");
+        }
+
+        System.out.println("Voici les compétences du responsable pour les disciplines du projet : ");
+        for (Investissement i : li) {
+            for (Competence c : lc) {
+                if (i.getDiscipline().getId_discipline() == c.getDisciplines().getId_discipline()) ;
+                System.out.println(c);
+            }
+        }
+    }
 }
+
+
+
+
+
+
+

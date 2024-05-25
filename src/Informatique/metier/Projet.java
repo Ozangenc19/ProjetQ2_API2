@@ -244,16 +244,16 @@ public class Projet {
      * @return liste des disciplines et le niveau du responsable du projet
      */
     public List<NiveauResponsableDisciplines> niveauResponsableDisciplines() {
-        List<NiveauResponsableDisciplines> liste_respDiscipline= new ArrayList<>();
+        List<NiveauResponsableDisciplines> ListeNivResDiscipline = new ArrayList<>();
         for (Competence c : getResponsable().ListeCompt) {
             for (Investissement i : Listeinvest){
                 if (c.getDisciplines().equals(i.getDiscipline())){
-                    liste_respDiscipline.add(new NiveauResponsableDisciplines(c.getDisciplines(), c.getNiveau(), responsable.getNom()));
+                    ListeNivResDiscipline.add(new NiveauResponsableDisciplines(c.getDisciplines(), c.getNiveau(), responsable.getNom()));
                 }
             }
 
         }
-        return liste_respDiscipline;
+        return ListeNivResDiscipline;
     }
 
     /**

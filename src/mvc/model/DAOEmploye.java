@@ -18,11 +18,11 @@ public abstract class DAOEmploye extends Subject {
 
     public abstract boolean addDiscipline(Employe employe, Disciplines disciplines, int niveau);
 
-    public abstract boolean updateDiscipline(Employe employe, Disciplines disciplines, int niveau);
+    public abstract boolean modifDiscipline(Employe employe, Disciplines disciplines, int niveau);
 
     public abstract boolean suppDisicpline(Employe employe, Disciplines disciplines);
 
-    public abstract List<ListeDisciplinesEtNiveau> listeDisciplinesEtNiveaus();
+    public abstract List<Competence> listeDisciplinesEtNiveaus(Employe employe);
 
     public abstract List<Projet> listeProjets(Employe employe);
 

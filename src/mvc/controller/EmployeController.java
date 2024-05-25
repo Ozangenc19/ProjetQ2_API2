@@ -39,24 +39,24 @@ public class EmployeController  {
         return model.addDiscipline(employe,disciplines,niveau);
     }
 
-    public boolean updateDiscipline(Employe employe, Disciplines disciplines, int niveau){
-        return model.updateDiscipline(employe,disciplines,niveau);
+    public boolean modifDiscipline(Employe employe, Disciplines disciplines, int niveau){
+        return model.modifDiscipline(employe,disciplines,niveau);
     }
 
     public boolean suppDiscipline(Employe employe, Disciplines disciplines){
         return model.suppDisicpline(employe,disciplines);
     }
 
-    public List<ListeDisciplinesEtNiveau> listeDisciplinesEtNiveau(){
-        return model.listeDisciplinesEtNiveaus();
+    public List<Competence> listeDisciplinesEtNiveau(Employe employe){
+        return model.listeDisciplinesEtNiveaus(employe);
     }
 
 
-    public List<Projet> projets(Employe employe){
+    public List<Projet> listeProjets(Employe employe){
         return model.listeProjets(employe);
     }
 
-    public List<Competence> competences(Employe employe){
+    public List<Competence> listeCompetences(Employe employe){
         return model.listeCompet(employe);
     }
 

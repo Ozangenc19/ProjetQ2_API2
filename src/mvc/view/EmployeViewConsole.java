@@ -1,8 +1,11 @@
 package mvc.view;
 
+
 import Informatique.metier.Competence;
 import Informatique.metier.Disciplines;
 import Informatique.metier.Employe;
+import Informatique.metier.Projet;
+import mvc.GestInfo;
 
 
 import java.util.Arrays;
@@ -79,12 +82,16 @@ public class EmployeViewConsole extends EmployeAbstractView {
     private void rechercher() {
         System.out.println("idEmploye : ");
         int idEmploye = sc.nextInt();
-        empController.search(idEmploye);
+        Employe emp = empController.search(idEmploye);
+        if (emp == null) affMsg("recherche infructueuse");
+        else {
+
+            operationspecial(emp);
+        }
     }
 
     private void modifier() {
         int nl = choixElt(le);
-
         Employe emp = le.get(nl - 1);
         String matricule = modifyIfNotBlank("Matricule de l'employé : ", emp.getMatricule());
         String nom = modifyIfNotBlank("Nom : ", emp.getNom());
@@ -109,7 +116,7 @@ public class EmployeViewConsole extends EmployeAbstractView {
         do {
             affMsg(" Employe " + employe.toString());
 
-            int choix = choixListe(Arrays.asList("ajouter une discipline", "modifier une discipline", "supprimer une discipline", "lister une discipline", "fin"));
+            int choix = choixListe(Arrays.asList("ajouter une discipline", "modifier une discipline", "supprimer une discipline", "lister une discipline","lister un projet","lister une competence", "fin"));
             switch (choix) {
                 case 1:
                     ajouterDidscipline(employe);
@@ -124,6 +131,12 @@ public class EmployeViewConsole extends EmployeAbstractView {
                     listerDisciplines(employe);
                     break;
                 case 5:
+                    listerProjets(employe);
+                    break;
+                case 6:
+                    listerCompetence(employe);
+                    break;
+                case 7:
                     return;
                 default:
                     System.out.println("choix invalide recommencez ");
@@ -132,47 +145,58 @@ public class EmployeViewConsole extends EmployeAbstractView {
     }
 
 
-    public void ajouterDidscipline(Employe employe){
-        System.out.println("Ajout d'une competence");
-        Disciplines dis = disabview.selectionner();
+    public void ajouterDidscipline(Employe employe) {
+        List<Disciplines> ld = GestInfo.dm.getDisciplines(); //on reprend la liste de toutes les disciplines
+        System.out.println("Ajout d'une discipline");
+        int choix = choixListe(ld);
         System.out.println(" Niveau : ");
         int niveau = sc.nextInt();
-        boolean ok = empController.addDiscipline(employe,dis,niveau);
+        boolean ok = empController.addDiscipline(employe,ld.get(choix - 1), niveau);
         if (ok) affMsg("Discipline ajoutée avec succes");
         else affMsg(" erreur lors de l'ajout");
     }
 
     private void modfifierDiscipline(Employe employe) {
-        System.out.println("Modification d'une competence");
-        List<Competence> lc = empController.competences(employe);
-        affList(lc);
-        Competence c = lc.get(choixElt(lc)-1);
-        Disciplines dis = c.getDisciplines();
+        List<Competence> ld = empController.listeDisciplinesEtNiveau(employe);
+        System.out.println("Modification d'une discipline");
+        int choix = choixListe(ld);
         System.out.println("niveau : ");
         int niveau = sc.nextInt();
-        boolean ok = empController.updateDiscipline(employe,dis,niveau);
+        boolean ok = empController.modifDiscipline(employe, ld.get(choix - 1).getDisciplines(), niveau);
         if (ok) affMsg("Mise à jour éffectuée");
         else affMsg(" echec de la mise à jour");
     }
 
     private void supprimerDiscipline(Employe employe) {
-        System.out.println(" Suprresion d'une compétence ");
-        List<Competence> lc = empController.competences(employe);
-        affList(lc);
-        Competence c = lc.get(choixElt(lc)-1);
-        Disciplines dis = c.getDisciplines();
-        boolean ok = empController.suppDiscipline(employe,dis);
+        List<Competence> ld = empController.listeDisciplinesEtNiveau(employe);
+        System.out.println(" Suprresion d'une discipline ");
+        int choix = choixListe(ld);
+        boolean ok = empController.suppDiscipline(employe, ld.get(choix - 1).getDisciplines());
         if (ok) affMsg("Competence supprimé avec succes");
         else affMsg(" echec de la suppresion ");
     }
 
     private void listerDisciplines(Employe employe) {
-        System.out.println("Competence de l'employé : "+employe);
-        List<Competence> lc = empController.competences(employe);
+        System.out.println("Discipline de l'employé : " + employe);
+        List<Competence> lc = empController.listeDisciplinesEtNiveau(employe);
         if (lc.isEmpty())
             affMsg("aucune competence pour cette employe");
         else affList(lc);
     }
 
+    private void listerProjets(Employe employe){
+        System.out.println("Projet de l'employé : "+employe);
+        List<Projet> lp = empController.listeProjets(employe);
+        if (lp.isEmpty())
+            affMsg("aucune competence pour cette employe");
+        else affList(lp);
+    }
+    private void listerCompetence(Employe employe){
+        System.out.println("Competence de l'employé : "+employe);
+        List<Competence> lc = empController.listeCompetences(employe);
+        if (lc.isEmpty())
+            affMsg("aucune competence pour cette employe");
+        else affList(lc);
+    }
 
 }

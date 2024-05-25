@@ -40,24 +40,24 @@ public class ProjetController {
         return model.addDiscipline(projet, disciplines, quantiteJH);
     }
 
-    public boolean updateDiscipline(Projet projet, Disciplines disciplines, int quantiteJH) {
-        return model.updateDiscipline(projet, disciplines, quantiteJH);
+    public boolean modifDiscipline(Projet projet, Disciplines disciplines, int quantiteJH) {
+        return model.modifDiscipline(projet, disciplines, quantiteJH);
     }
 
     public boolean suppDiscipline(Projet projet, Disciplines disciplines) {
         return model.suppDiscipline(projet,disciplines);
     }
 
-    public List<ListeDisciplinesEtInvestissement> listeDisciplinesEtInvestissement(){
-        return model.listeDisciplinesEtInvestissement();
+    public List<Investissement> listeDisciplinesEtInvestissement(Projet projet){
+        return model.listeDisciplinesEtInvestissement(projet);
     }
 
-    public List<NiveauResponsableDisciplines> niveauResponsableDiscipline(){
-        return model.niveauResponsableDiscipline();
+    public List<Competence> niveauResponsableDiscipline(Projet projet){
+        return model.niveauResponsableDiscipline(projet);
     }
 
-    public int investissementTotal(){
-        return model.investissementTotal();
+    public int investissementTotal(Projet projet){
+        return model.investissementTotal(projet);
     }
     public List<Investissement> getInvestissement(Projet projet){
         return model.getInvestissement(projet);

@@ -78,7 +78,7 @@ public class DisciplineModelDB extends DAODiscipline {
         try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
             pstm.setString(1,disciplines.getNom());
             pstm.setString(2,disciplines.getDescription());
-            pstm.setInt(6,disciplines.getId_discipline());
+            pstm.setInt(3,disciplines.getId_discipline());
             int n = pstm.executeUpdate();
             notifyObservers();
             if(n!=0) return readDiscipline(disciplines.getId_discipline());
@@ -93,20 +93,7 @@ public class DisciplineModelDB extends DAODiscipline {
 
     @Override
     public Disciplines readDiscipline(int idDiscipline) {
-                 /*
-       create or replace view API2_DISCIPLINE_PROJET(id_discipline_discipline,nom_discipline,description_discipline,id_projet,nom_projet,datedebut_projet,datefin_projet,cout_projet)
-as select
-d.id_discipline,
-d.nom,d.description,
-p.id_projet,
-p.nom,
-p.datedebut,
-p.datefin,
-p.cout
-from API2_DISCIPLINE d join API2_PROJET p on d.id_discipLine=p.id_discipline
-order by d.id_discipline;
 
- */
         String query = "select * from API2_DISCIPLINE where id_discipline = ?";
         try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
             pstm.setInt(1,idDiscipline);

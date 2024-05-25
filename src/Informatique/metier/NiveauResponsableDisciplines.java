@@ -12,6 +12,7 @@ public class NiveauResponsableDisciplines {
      * discipline d'un responsable par rapport à son niveau
      */
     protected Disciplines discipline;
+
     /**
      * niveau d'un responsable par rapport à ca discipline
      */
@@ -33,6 +34,7 @@ public class NiveauResponsableDisciplines {
         this.niveau = niveau;
         this.nom = nom;
     }
+
 
     /**
      * getter d'une discipline

@@ -79,7 +79,8 @@ public class DisciplineViewConsole extends DisciplineAbstractView {
     public void rechercher() {
         System.out.printf("idDiscipline : ");
         int idDiscipline = sc.nextInt();
-        disciplineController.search(idDiscipline);
+        Disciplines dis = disciplineController.search(idDiscipline);
+        System.out.println(dis);
     }
 
     public void modifier() {

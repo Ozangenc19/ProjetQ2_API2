@@ -31,6 +31,7 @@ public class Competence {
      */
     protected Disciplines disciplines;
 
+    protected Employe employe;
 
     /**
      * Constructeur paramétré de la classe Compétence
@@ -43,6 +44,18 @@ public class Competence {
         this.niveau = niveau;
         this.id_competence = id_comp++;
 
+    }
+    public Competence(int id_comp, int niveau, Disciplines discipline, Employe employe) {
+        this.id_competence = id_comp;
+        this.niveau = niveau;
+        this.disciplines = discipline;
+        this.employe = employe;
+    }
+
+    public Competence(int id_comp, int niveau, Employe employe){
+        this.id_competence = id_comp;
+        this.niveau = niveau;
+        this.employe = employe;
     }
 
     /**

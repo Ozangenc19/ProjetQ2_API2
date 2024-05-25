@@ -329,5 +329,16 @@ public class Projet {
         }
         return false; // La discipline n'a pas été trouvée et supprimée
     }
+
+    @Override
+    public String toString() {
+        return "Projet{" +
+                "nom='" + nom + '\'' +
+                ", dateDebut=" + dateDebut +
+                ", dateFin=" + dateFin +
+                ", cout=" + cout +
+                ", responsable=" + responsable +
+                '}';
+    }
 }
 
