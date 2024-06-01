@@ -16,22 +16,6 @@ public class DisciplineViewConsole extends DisciplineAbstractView {
     private Scanner sc = new Scanner(System.in);
 
     @Override
-    public void affMsg(String msg) {
-        System.out.println("information:" + msg);
-    }
-
-    @Override
-    public void affList(List l) {
-        for (Object obj : l) {
-            if (obj instanceof Disciplines) {
-                Disciplines discipline = (Disciplines) obj;
-                System.out.println(discipline);
-            }
-        }
-
-    }
-
-    @Override
     public void menu() {
         update(disciplineController.getAll());
         do {
@@ -88,7 +72,7 @@ public class DisciplineViewConsole extends DisciplineAbstractView {
 
         Disciplines dis = ld.get(nl - 1);
         String nom = modifyIfNotBlank("nom de la discipline ", dis.getNom());
-        String description = modifyIfNotBlank("description", dis.getDescription());
+        String description = modifyIfNotBlank("description de la discipline ", dis.getDescription());
         Disciplines dismaj = disciplineController.updateDiscipline(new Disciplines(dis.getId_discipline(), nom, description));
         if (dismaj == null) affMsg("mise à jour infructueuse");
         else affMsg("mise à jour effectuée : " + dismaj);
@@ -102,5 +86,20 @@ public class DisciplineViewConsole extends DisciplineAbstractView {
         return dis;
     }
 
+    @Override
+    public void affMsg(String msg) {
+        System.out.println("information:" + msg);
+    }
+
+    @Override
+    public void affList(List l) {
+        for (Object obj : l) {
+            if (obj instanceof Disciplines) {
+                Disciplines discipline = (Disciplines) obj;
+                System.out.println(discipline);
+            }
+        }
+
+    }
 
 }

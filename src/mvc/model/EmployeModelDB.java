@@ -202,7 +202,7 @@ public class EmployeModelDB extends DAOEmploye {
     @Override
     public List<Competence> listeDisciplinesEtNiveaus(Employe employe) {
         String query1 = "SELECT * FROM API2_COMPETENCE WHERE id_employe = ?";
-        String query2 = "SELECT * FROM API2_DISCIPLINE WHERE id_discipline = ?";
+        String query2 = "SELECT * FROM API2_DISCIPLINES WHERE id_discipline = ?";
         List<Competence> lc = new ArrayList<>();
         try (PreparedStatement pstm1 = dbConnect.prepareStatement(query1);
              PreparedStatement pstm2 = dbConnect.prepareStatement(query2)) {

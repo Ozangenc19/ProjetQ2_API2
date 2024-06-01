@@ -1,10 +1,7 @@
 package mvc.view;
 
 
-import Informatique.metier.Competence;
-import Informatique.metier.Disciplines;
-import Informatique.metier.Employe;
-import Informatique.metier.Projet;
+import Informatique.metier.*;
 import mvc.GestInfo;
 
 
@@ -18,16 +15,6 @@ public class EmployeViewConsole extends EmployeAbstractView {
 
 
     private Scanner sc = new Scanner(System.in);
-
-    @Override
-    public void affMsg(String msg) {
-        System.out.println("Information : " + msg);
-    }
-
-    @Override
-    public void affList(List infos) {
-        affListe(infos);
-    }
 
     public void menu() {
         update(empController.getAll());
@@ -116,7 +103,7 @@ public class EmployeViewConsole extends EmployeAbstractView {
         do {
             affMsg(" Employe " + employe.toString());
 
-            int choix = choixListe(Arrays.asList("ajouter une discipline", "modifier une discipline", "supprimer une discipline", "lister une discipline","lister un projet","lister une competence", "fin"));
+            int choix = choixListe(Arrays.asList("ajouter une discipline", "modifier une discipline", "supprimer une discipline", "lister une discipline","lister un projet", "fin"));
             switch (choix) {
                 case 1:
                     ajouterDidscipline(employe);
@@ -133,11 +120,6 @@ public class EmployeViewConsole extends EmployeAbstractView {
                 case 5:
                     listerProjets(employe);
                     break;
-                case 6:
-                    listerCompetence(employe);
-                    break;
-                case 7:
-                    return;
                 default:
                     System.out.println("choix invalide recommencez ");
             }
@@ -191,12 +173,30 @@ public class EmployeViewConsole extends EmployeAbstractView {
             affMsg("aucune competence pour cette employe");
         else affList(lp);
     }
+
     private void listerCompetence(Employe employe){
         System.out.println("Competence de l'employé : "+employe);
         List<Competence> lc = empController.listeCompetences(employe);
         if (lc.isEmpty())
             affMsg("aucune competence pour cette employe");
         else affList(lc);
+    }
+
+    private void listedisciplineniveau(Employe employe){
+        List<Competence> lc = empController.listeDisciplinesEtNiveau(employe);
+
+        if(lc.isEmpty()) affMsg("aucune discipline trouvée");
+        else affList(lc);
+    }
+
+    @Override
+    public void affMsg(String msg) {
+        System.out.println("Information : " + msg);
+    }
+
+    @Override
+    public void affList(List infos) {
+        affListe(infos);
     }
 
 }

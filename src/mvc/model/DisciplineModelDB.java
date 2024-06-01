@@ -94,7 +94,7 @@ public class DisciplineModelDB extends DAODiscipline {
     @Override
     public Disciplines readDiscipline(int idDiscipline) {
 
-        String query = "select * from API2_DISCIPLINE where id_discipline = ?";
+        String query = "select * from API2_DISCIPLINES where id_discipline = ?";
         try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
             pstm.setInt(1,idDiscipline);
             ResultSet rs = pstm.executeQuery();

@@ -223,16 +223,16 @@ public class ProjetModelDB extends DAOProjet {
     @Override
     public List<Investissement> listeDisciplinesEtInvestissement(Projet projet) {
         String query1 = "SELECT * FROM API2_INVESTISSEMENT WHERE id_projet = ?";
-        String query2 = "SELECT * FROM API2_DISCIPLINE WHERE id_discipline = ?";
+        String query2 = "SELECT * FROM API2_DISCIPLINES WHERE id_discipline = ?";
         List<Investissement> li = new ArrayList<>();
         try (PreparedStatement pstm1 = dbConnect.prepareStatement(query1);
              PreparedStatement pstm2 = dbConnect.prepareStatement(query2)) {
             pstm1.setInt(1, projet.getId_projet());
             ResultSet rs1 = pstm1.executeQuery();
             while (rs1.next()) {
-                int id_investissement = rs1.getInt(1);
-                int quantiteJH = rs1.getInt(2);
-                int id_discicipline = rs1.getInt(3);
+                int id_investissement = rs1.getInt(4);
+                int quantiteJH = rs1.getInt(3);
+                int id_discicipline = rs1.getInt(1);
                 pstm2.setInt(1, id_discicipline);
                 ResultSet rs2 = pstm2.executeQuery();
                 Disciplines dis = null;
@@ -252,8 +252,8 @@ public class ProjetModelDB extends DAOProjet {
 
     @Override
     public List<Competence> niveauResponsableDiscipline(Projet projet) {
-        String query1 = "select c.id_discipline, c.id_employe, c.niveau, c.id_competence, from API2_COMPETENCE c join API2_PROJET p on c.id_employe = p.id_employe where p.id_projet = ? and c.id_employe = ?";
-        String query2 = "SELECT nom, description FROM API2_DISCIPLINE WHERE id_discipline = ?";
+        String query1 = "select c.id_discipline, c.id_employe, c.niveau, c.id_competence from API2_COMPETENCE c join API2_PROJET p on c.id_employe = p.id_employe where p.id_projet = ? and c.id_employe = ?";
+        String query2 = "SELECT nom, description FROM API2_DISCIPLINES WHERE id_discipline = ?";
 
         List<Competence> lc = new ArrayList<>();
 
@@ -266,15 +266,15 @@ public class ProjetModelDB extends DAOProjet {
             while (rs1.next()) {
 
                 int idDisc = rs1.getInt(1);
-                int niveau = rs1.getInt(2);
-                int idCompet = rs1.getInt(3);
+                int niveau = rs1.getInt(3);
+                int idCompet = rs1.getInt(4);
                 pstm2.setInt(1, idDisc);
                 ResultSet rs2 = pstm2.executeQuery();
                 Disciplines discipline = null;
 
                 if (rs2.next()) {
-                    String nom = rs2.getString(2);
-                    String description = rs2.getString(3);
+                    String nom = rs2.getString(1);
+                    String description = rs2.getString(2);
                     discipline = new Disciplines(idDisc, nom, description);
                 }
 
@@ -290,7 +290,7 @@ public class ProjetModelDB extends DAOProjet {
 
     @Override
     public int investissementTotal(Projet projet) {
-        String query = "{ ? = call total_investissement_projet(?) }"; //On utilise la fonction total_investissements crée sur oracle
+        String query = "{ ? = call total_investissement_projet(?) }"; //On utilise la fonction total_investissements crée sur oracle (procedure embarquées)
         try (CallableStatement cs = dbConnect.prepareCall(query)) {
             cs.registerOutParameter(1, Types.INTEGER);
             cs.setInt(2, projet.getId_projet());

@@ -11,6 +11,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -19,18 +20,6 @@ import static utilitaires.Utilitaire.*;
 public class ProjetViewConsole extends ProjetAbstractView {
 
     private Scanner sc = new Scanner(System.in);
-
-    @Override
-    public void affMsg(String msg) {
-        System.out.println("information : " + msg);
-
-    }
-
-    @Override
-    public void affList(List l) {
-        affListe(l);
-
-    }
 
     @Override
     public void menu() {
@@ -169,7 +158,7 @@ public class ProjetViewConsole extends ProjetAbstractView {
 
     private void operationspecial(Projet projet) {
         do {
-            int ch = choixListe(Arrays.asList("ajouter discipline", "modifier discipline", "supprimer discipline", "lister les disciplines", "lister un investissement", "investissement total", "competence du responsable", "menu principal"));
+            int ch = choixListe(Arrays.asList("ajouter discipline", "modifier discipline", "supprimer discipline", "lister les disciplines", "investissement total", "competence du responsable", "menu principal"));
 
             switch (ch) {
                 case 1:
@@ -183,9 +172,6 @@ public class ProjetViewConsole extends ProjetAbstractView {
                     break;
                 case 4:
                     listerDiscipline(projet);
-                    break;
-                case 5:
-                    listerInvestissement(projet);
                     break;
                 case 6:
                     investissementTotal(projet);
@@ -241,15 +227,6 @@ public class ProjetViewConsole extends ProjetAbstractView {
         else affList(li);
     }
 
-
-    private void listerInvestissement(Projet projet) {
-        System.out.println("Investissement d'un projet : " + projet);
-        List<Investissement> li = projetController.getInvestissement(projet);
-        if (li.isEmpty())
-            affMsg("aucune discipline pour cette employe");
-        else affList(li);
-    }
-
     private void investissementTotal(Projet projet) {
         int total = projetController.investissementTotal(projet);
 
@@ -264,18 +241,54 @@ public class ProjetViewConsole extends ProjetAbstractView {
         List<Competence> lc = projetController.niveauResponsableDiscipline(projet);
 
         if (lc.isEmpty()) {
-            affMsg("Aucune compétence");
+            System.out.println("Aucune compétence trouvée pour le responsable.");
+            return;
         }
 
-        System.out.println("Voici les compétences du responsable pour les disciplines du projet : ");
-        for (Investissement i : li) {
-            for (Competence c : lc) {
-                if (i.getDiscipline().getId_discipline() == c.getDisciplines().getId_discipline()) ;
-                System.out.println(c);
+        // Tri des investissements par ID de discipline
+        li.sort(Comparator.comparingInt(i -> i.getDiscipline().getId_discipline()));
+
+        System.out.println("Compétences du responsable pour les disciplines du projet :");
+
+        for (Investissement investissement : li) {
+            for (Competence competence : lc) {
+                if (investissement.getDiscipline().getId_discipline() == competence.getDisciplines().getId_discipline()) {
+                    System.out.println(competence);
+                }
             }
         }
     }
+
+    private void listedisciplineinvest(Projet projet){
+        List<Investissement> li = projetController.listeDisciplinesEtInvestissement(projet);
+        if(li.isEmpty()) affMsg("aucune discipline trouvée");
+        else affList(li);
+    }
+
+    private void listerInvestissement(Projet projet) {
+        System.out.println("Investissement d'un projet : " + projet);
+        List<Investissement> li = projetController.getInvestissement(projet);
+        if (li.isEmpty())
+            affMsg("aucun investissement pour cette employe");
+        else affList(li);
+    }
+
+
+    @Override
+    public void affMsg(String msg) {
+        System.out.println("information : " + msg);
+
+    }
+
+    @Override
+    public void affList(List l) {
+        affListe(l);
+
+    }
+
+
 }
+
 
 
 
