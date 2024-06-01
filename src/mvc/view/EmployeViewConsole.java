@@ -120,6 +120,8 @@ public class EmployeViewConsole extends EmployeAbstractView {
                 case 5:
                     listerProjets(employe);
                     break;
+                case 6:
+                    return;
                 default:
                     System.out.println("choix invalide recommencez ");
             }

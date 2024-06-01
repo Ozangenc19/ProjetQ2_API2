@@ -173,13 +173,13 @@ public class ProjetViewConsole extends ProjetAbstractView {
                 case 4:
                     listerDiscipline(projet);
                     break;
-                case 6:
+                case 5:
                     investissementTotal(projet);
                     break;
-                case 7:
+                case 6:
                     niveauxResponsableDisciplines(projet);
                     break;
-                case 8:
+                case 7:
                     return;
                 default:
                     System.out.println("choix invalide recommencez ");
