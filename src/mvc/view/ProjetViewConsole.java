@@ -10,10 +10,7 @@ import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static utilitaires.Utilitaire.*;
 
@@ -49,7 +46,9 @@ public class ProjetViewConsole extends ProjetAbstractView {
     private void ajouter() {
 
         Projet projet;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        // j'ai cherché sur le doc java pour le fonctionnement de cette class datatimeformatter
+        DateTimeFormatter formatdate = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
         do {
             try {
                 System.out.print("Nom du projet : ");
@@ -58,9 +57,9 @@ public class ProjetViewConsole extends ProjetAbstractView {
                 LocalDate datedebut = null;
                 while (datedebut == null) {
                     System.out.print("Date de début (dd/MM/yyyy) : ");
-                    String input = sc.next();
+                    String datedbt = sc.next();
                     try {
-                        datedebut = LocalDate.parse(input, formatter);
+                        datedebut = LocalDate.parse(datedbt, formatdate);
                     } catch (DateTimeParseException e) {
                         System.out.println("Format de date invalide. Veuillez réessayer.");
                     }
@@ -69,9 +68,9 @@ public class ProjetViewConsole extends ProjetAbstractView {
                 LocalDate datefin = null;
                 while (datefin == null) {
                     System.out.print("Date de fin (dd/MM/yyyy) : ");
-                    String input = sc.next();
+                    String datefn = sc.next();
                     try {
-                        datefin = LocalDate.parse(input, formatter);
+                        datefin = LocalDate.parse(datefn, formatdate);
                     } catch (DateTimeParseException e) {
                         System.out.println("Format de date invalide. Veuillez réessayer.");
                     }
@@ -93,14 +92,21 @@ public class ProjetViewConsole extends ProjetAbstractView {
                     return;
                 }
                 System.out.println("Responsable :");
-                int ch = choixListe(le);
 
-                if (ch <= 0 || ch > le.size()) {
-                    System.out.println("Choix invalide. Veuillez réessayer.");
-                    continue;
+                int ch = choixListe(le);
+                Employe responsable = null;
+                while (responsable == null) {
+                    System.out.println("Responsable :");
+
+
+                    if (ch > 0 && ch <= le.size()) {
+                        responsable = le.get(ch - 1);
+                    } else {
+                        System.out.println("Choix invalide. Veuillez réessayer.");
+                    }
                 }
                 System.out.println(le.get(ch - 1));
-                projet = new Projet(nom, datedebut, datefin, cout, le.get(ch - 1));
+                projet = new Projet(0,nom, datedebut, datefin, cout, le.get(ch - 1));
                 System.out.println("Projet créé : " + projet);
                 projetController.addProjet(projet);
                 break;
@@ -199,6 +205,8 @@ public class ProjetViewConsole extends ProjetAbstractView {
         else affMsg(" erreur lord e l'ajout de la discipline");
     }
 
+    // pour le projet quand on veut modifier et supprimer ca n'affiche pas la liste des investissement a modifié
+    // mais la modification et la suppression se fait juste qu'on ne voit pas la liste, alors que dans employe tout cela fonctionne
     private void modfifierDiscipline(Projet projet) {
         List<Investissement> li = projetController.listeDisciplinesEtInvestissement(projet);
         System.out.println("Modification d'une discipline");
@@ -206,16 +214,16 @@ public class ProjetViewConsole extends ProjetAbstractView {
         System.out.println("quantiteJH: ");
         int quantitejH = sc.nextInt();
         boolean ok = projetController.modifDiscipline(projet, li.get(choix - 1).getDiscipline(), quantitejH);
-        if (ok) affMsg("Mise à jour éffectuée");
+        if (ok) affMsg("discipline modifié avec succés");
         else affMsg(" echec de la mise à jour");
     }
 
     private void supprimerDiscipline(Projet projet) {
         List<Investissement> li = projetController.listeDisciplinesEtInvestissement(projet);
-        System.out.println(" Suprresion d'un investissement ");
+        System.out.println(" Suprresion d'une discipline ");
         int choix = choixElt(li);
         boolean ok = projetController.suppDiscipline(projet, li.get(choix - 1).getDiscipline());
-        if (ok) affMsg("Discipline supprimé avec succes");
+        if (ok) affMsg("discipline supprimé avec succes");
         else affMsg(" echec de la suppresion ");
     }
 
@@ -228,12 +236,12 @@ public class ProjetViewConsole extends ProjetAbstractView {
     }
 
     private void investissementTotal(Projet projet) {
-        int total = projetController.investissementTotal(projet);
+        int montantTotal = projetController.investissementTotal(projet);
 
-        if (total == 0) {
+        if (montantTotal == 0) {
             affMsg("Aucun investissement pour ce projet");
         } else
-            affMsg("Voici le total des investissement pour le projet '" + projet.getNom() + "' : " + total);
+            affMsg("Voici le total des investissement pour le projet '" + projet.getNom() + "' : " + montantTotal);
     }
 
     private void niveauxResponsableDisciplines(Projet projet) {
@@ -246,6 +254,7 @@ public class ProjetViewConsole extends ProjetAbstractView {
         }
 
         // Tri des investissements par ID de discipline
+        // j'ai cherché sur le doc java pour le fonctionnement de cette class comparator car tout était dans le désordre a chaque fois
         li.sort(Comparator.comparingInt(i -> i.getDiscipline().getId_discipline()));
 
         System.out.println("Compétences du responsable pour les disciplines du projet :");

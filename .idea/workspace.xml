@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d14a57ac-9d63-4c59-84d9-c1230b43c29e" name="Changes" comment="MVC FIN">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Competence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Competence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Informatique/metier/Investissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Informatique/metier/Investissement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/model/EmployeModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/model/EmployeModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/model/ProjetModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/model/ProjetModelDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/view/EmployeViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/view/EmployeViewConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/view/ProjetViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/view/ProjetViewConsole.java" afterDir="false" />
     </list>
@@ -61,7 +65,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ozant/OneDrive - HEPH-Condorcet/Bureau/ExamenAPI1_2eSession_UgurKulaksiz/ExamenAPI1_2eSession_UgurKulaksiz&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/projetapi(Noah)&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -234,6 +238,15 @@
       <workItem from="1717235416398" duration="53000" />
       <workItem from="1717236576920" duration="10768000" />
       <workItem from="1717251052065" duration="587000" />
+      <workItem from="1717252019645" duration="925000" />
+      <workItem from="1717256213364" duration="484000" />
+      <workItem from="1717257766555" duration="107000" />
+      <workItem from="1717260702204" duration="19000" />
+      <workItem from="1717271680313" duration="1231000" />
+      <workItem from="1717275820470" duration="475000" />
+      <workItem from="1717276491995" duration="23000" />
+      <workItem from="1717284919895" duration="3226000" />
+      <workItem from="1717323557838" duration="1838000" />
     </task>
     <task id="LOCAL-00001" summary="premier commit">
       <option name="closed" value="true" />
@@ -379,7 +392,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717244810437</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="MVC FIN">
+      <option name="closed" value="true" />
+      <created>1717252159846</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1717252159846</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

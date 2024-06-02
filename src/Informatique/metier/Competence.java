@@ -51,6 +51,12 @@ public class Competence {
         this.disciplines = discipline;
         this.employe = employe;
     }
+    public Competence(int id_comp, Employe employe, Disciplines discipline , int niveau) {
+        this.id_competence = id_comp;
+        this.employe = employe;
+        this.disciplines = discipline;
+        this.niveau = niveau;
+    }
 
     public Competence(int id_comp, int niveau, Employe employe){
         this.id_competence = id_comp;

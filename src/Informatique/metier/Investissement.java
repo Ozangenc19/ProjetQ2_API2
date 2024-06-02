@@ -47,14 +47,14 @@ public class Investissement {
 
     }
     public Investissement(int idInvest,int quantiteJH,Disciplines disciplines, Projet projet){
-        this.idInvest = idInvest;
+        this.idInvest = idInvest++;
         this.quantiteJH = quantiteJH;
         this.discipline = disciplines;
         this.projet = projet;
 
     }
     public Investissement(int idInvest,int quantiteJH, Projet projet){
-        this.idInvest = idInvest;
+        this.idInvest = idInvest++;
         this.quantiteJH = quantiteJH;
         this.projet = projet;
 

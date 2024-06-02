@@ -130,7 +130,7 @@ public class EmployeViewConsole extends EmployeAbstractView {
 
 
     public void ajouterDidscipline(Employe employe) {
-        List<Disciplines> ld = GestInfo.dm.getDisciplines(); //on reprend la liste de toutes les disciplines
+        List<Disciplines> ld = GestInfo.dm.getDisciplines(); //on reprend la liste de toutes les disciplines, Simon m'a aidé a trouvé 
         System.out.println("Ajout d'une discipline");
         int choix = choixListe(ld);
         System.out.println(" Niveau : ");
@@ -147,7 +147,7 @@ public class EmployeViewConsole extends EmployeAbstractView {
         System.out.println("niveau : ");
         int niveau = sc.nextInt();
         boolean ok = empController.modifDiscipline(employe, ld.get(choix - 1).getDisciplines(), niveau);
-        if (ok) affMsg("Mise à jour éffectuée");
+        if (ok) affMsg("Discipline modifié avec succés");
         else affMsg(" echec de la mise à jour");
     }
 
@@ -156,7 +156,7 @@ public class EmployeViewConsole extends EmployeAbstractView {
         System.out.println(" Suprresion d'une discipline ");
         int choix = choixListe(ld);
         boolean ok = empController.suppDiscipline(employe, ld.get(choix - 1).getDisciplines());
-        if (ok) affMsg("Competence supprimé avec succes");
+        if (ok) affMsg("Discipline supprimé avec succes");
         else affMsg(" echec de la suppresion ");
     }
 
@@ -164,7 +164,7 @@ public class EmployeViewConsole extends EmployeAbstractView {
         System.out.println("Discipline de l'employé : " + employe);
         List<Competence> lc = empController.listeDisciplinesEtNiveau(employe);
         if (lc.isEmpty())
-            affMsg("aucune competence pour cette employe");
+            affMsg("aucune discipline pour cette employe");
         else affList(lc);
     }
 
@@ -172,7 +172,7 @@ public class EmployeViewConsole extends EmployeAbstractView {
         System.out.println("Projet de l'employé : "+employe);
         List<Projet> lp = empController.listeProjets(employe);
         if (lp.isEmpty())
-            affMsg("aucune competence pour cette employe");
+            affMsg("aucun projet pour cette employe");
         else affList(lp);
     }
 
@@ -187,7 +187,7 @@ public class EmployeViewConsole extends EmployeAbstractView {
     private void listedisciplineniveau(Employe employe){
         List<Competence> lc = empController.listeDisciplinesEtNiveau(employe);
 
-        if(lc.isEmpty()) affMsg("aucune discipline trouvée");
+        if(lc.isEmpty()) affMsg("aucune discipline trouvée pour ce niveau");
         else affList(lc);
     }
 

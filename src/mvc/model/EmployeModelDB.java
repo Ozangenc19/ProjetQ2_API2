@@ -210,7 +210,7 @@ public class EmployeModelDB extends DAOEmploye {
             ResultSet rs1 = pstm1.executeQuery();
             while (rs1.next()) {
                 int id_discicipline = rs1.getInt(1);
-                int niveau = rs1.getInt(2);
+                int niveau = rs1.getInt(3);
                 int id_competence = rs1.getInt(4);
 
 
